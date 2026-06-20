@@ -4,10 +4,18 @@ import demoPack from '../data/demo_pack.json';
 import { loadSquad } from '../data/liveFeed';
 import { peerNet } from '../net/peer';
 
+const OWNED_KEY = 'cardclash.owned';
+const loadOwned = (): Card[] => {
+  try { return JSON.parse(localStorage.getItem(OWNED_KEY) || '[]'); } catch { return []; }
+};
+
 interface Store {
   demoCards: Card[];
   isLoadingDemo: boolean;
   fetchDemoCards: () => Promise<void>;
+
+  owned: Card[];
+  addOwned: (cards: Card[]) => void;
 
   game: GameState;
   setRoomId: (id: string) => void;
@@ -64,6 +72,16 @@ export const useStore = create<Store>((set, get) => {
     demoCards: [],
     isLoadingDemo: false,
     error: null,
+
+    owned: loadOwned(),
+    addOwned: (cards) =>
+      set((s) => {
+        const map = new Map(s.owned.map((c) => [c.id, c]));
+        cards.forEach((c) => map.set(c.id, c));
+        const merged = [...map.values()];
+        localStorage.setItem(OWNED_KEY, JSON.stringify(merged));
+        return { owned: merged };
+      }),
 
     // Loads the World Cup squad (live feed if VITE_LIVE_FEED_URL is set, else bundled).
     fetchDemoCards: async () => {

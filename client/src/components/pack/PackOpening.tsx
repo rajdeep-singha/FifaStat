@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Card } from '../../types';
 import { CardFace } from '../card/CardFace';
+import { useStore } from '../../store';
 import '../../styles/pack.css';
 
 const rarityRank: Record<string, number> = { bronze: 0, silver: 1, gold: 2 };
@@ -54,8 +55,12 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
     }, 1300));
   };
 
+  const addOwned = useStore((s) => s.addOwned);
   const bestIdx = pack.length - 1;
   const done = revealed >= pack.length;
+
+  // once fully revealed, the pack lands in your collection
+  useEffect(() => { if (done && pack.length) addOwned(pack); }, [done, pack, addOwned]);
   const topRarity = pack[bestIdx]?.rarity ?? 'bronze';
 
   return (

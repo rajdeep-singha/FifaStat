@@ -6,7 +6,7 @@ import { LobbyScreen } from './components/lobby/LobbyScreen';
 import { Arena } from './components/game/Arena';
 import { PackOpening } from './components/pack/PackOpening';
 import { HomeScreen } from './components/home/HomeScreen';
-import { CreateTeam } from './components/team/CreateTeam';
+import { LandingPage } from './components/landing/LandingPage';
 import { useAuth } from './web3/useAuth';
 import { LoginScreen } from './components/auth/LoginScreen';
 import { ProfileBar } from './components/auth/ProfileBar';
@@ -15,19 +15,38 @@ function App() {
   const { game, demoCards, fetchDemoCards } = useStore();
   const { isLoggedIn } = useAuth();
   const [showcase, setShowcase] = useState(() => new URLSearchParams(location.search).has('pack'));
-  const [view, setView] = useState<'home' | 'play' | 'team'>('home');
+  const [view, setView] = useState<'home' | 'play'>('home');
+  const [hasEntered, setHasEntered] = useState(() => {
+    return sessionStorage.getItem('cc.entered') === '1';
+  });
 
   useEffect(() => { fetchDemoCards(); }, []);
 
-  // Flow:  login → home (your id + your cards) → Open Pack / Play → match
-  // Pack opening also works pre-login (no wallet needed to look).
+  const enterApp = () => {
+    sessionStorage.setItem('cc.entered', '1');
+    setHasEntered(true);
+  };
+
+  // Pack opening works before login
   if (showcase && demoCards.length > 0) {
     return <PackOpening cards={demoCards} onClose={() => setShowcase(false)} />;
   }
 
-  const devForce = new URLSearchParams(location.search).has('dev');
-  if (!isLoggedIn && !devForce) return <LoginScreen onPreview={() => setShowcase(true)} />;
+  // Landing page — shown before entering the app
+  if (!hasEntered) {
+    return (
+      <LandingPage
+        demoCards={demoCards}
+        onEnterApp={enterApp}
+        onOpenPack={() => setShowcase(true)}
+      />
+    );
+  }
 
+  // Auth gate
+  if (!isLoggedIn) return <LoginScreen onPreview={() => setShowcase(true)} />;
+
+  // In-game
   const isInGame = ['dealing', 'choosing', 'waiting_choice', 'resolving', 'finished'].includes(game.status);
   if (isInGame) return <Arena />;
 
@@ -35,13 +54,7 @@ function App() {
     <div style={{ minHeight: '100vh' }}>
       <ProfileBar />
       {view === 'home' ? (
-        <HomeScreen
-          onOpenPack={() => setShowcase(true)}
-          onPlay={() => setView('play')}
-          onBuildTeam={() => setView('team')}
-        />
-      ) : view === 'team' ? (
-        <CreateTeam onDone={() => setView('home')} />
+        <HomeScreen onOpenPack={() => setShowcase(true)} onPlay={() => setView('play')} onBuildTeam={() => setView('play')} />
       ) : (
         <div>
           <button

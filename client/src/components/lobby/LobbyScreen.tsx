@@ -4,26 +4,17 @@ import { useStore } from '../../store';
 export const LobbyScreen: React.FC = () => {
   const [roomInput, setRoomInput] = useState('');
   const [isCreating, setIsCreating] = useState(false);
-  const { connectWS, setRoomId, game } = useStore();
+  const { hostRoom, joinRoom: joinP2P, game } = useStore();
 
   const createRoom = async () => {
     setIsCreating(true);
-    try {
-      const res = await fetch('http://localhost:8080/api/rooms', { method: 'POST' });
-      const data = await res.json();
-      setRoomId(data.room_id);
-      connectWS(data.room_id);
-    } catch (e) {
-      console.error(e);
-    }
+    await hostRoom();
     setIsCreating(false);
   };
 
   const joinRoom = () => {
     if (!roomInput.trim()) return;
-    const id = roomInput.trim();
-    setRoomId(id);
-    connectWS(id);
+    joinP2P(roomInput.trim());
   };
 
   if (game.roomId && (game.status === 'idle' || game.status === 'waiting_opponent')) {

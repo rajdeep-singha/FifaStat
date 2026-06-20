@@ -5,9 +5,14 @@ import { useStore } from './store';
 import { LobbyScreen } from './components/lobby/LobbyScreen';
 import { Arena } from './components/game/Arena';
 import { CardFace } from './components/card/CardFace';
+import { useAuth } from './web3/useAuth';
+import { LoginScreen } from './components/auth/LoginScreen';
+import { UsernamePrompt } from './components/auth/UsernamePrompt';
+import { ProfileBar } from './components/auth/ProfileBar';
 
 function App() {
   const { game, demoCards, fetchDemoCards } = useStore();
+  const { isLoggedIn, registered, contractConfigured } = useAuth();
   const [showDemo, setShowDemo] = useState(false);
   const [revealedIdx, setRevealedIdx] = useState(-1);
 
@@ -19,12 +24,18 @@ function App() {
     [0, 1, 2, 3, 4].forEach((i) => setTimeout(() => setRevealedIdx(i), 300 + i * 400));
   };
 
+  // ---- on-chain auth gate (no backend) ----
+  if (!isLoggedIn) return <LoginScreen />;
+  // logged in but no on-chain username yet (only enforced once the contract is live)
+  if (contractConfigured && !registered) return <UsernamePrompt />;
+
   const isInGame = ['dealing', 'choosing', 'waiting_choice', 'resolving', 'finished'].includes(game.status);
 
   if (isInGame) return <Arena />;
 
   return (
     <div style={{ minHeight: '100vh' }}>
+      <ProfileBar />
       {showDemo && demoCards.length > 0 ? (
         <div style={{ padding: 20 }}>
           <button

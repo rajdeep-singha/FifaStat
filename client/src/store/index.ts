@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { type Card, type GameState, type GameStatus, type StatKey, type RoundResult } from '../types';
+import demoPack from '../data/demo_pack.json';
+import { peerNet } from '../net/peer';
 
 interface Store {
   demoCards: Card[];
@@ -18,9 +20,10 @@ interface Store {
   setGameOver: (winnerSlot: number, transferredCard: Card | null, p1Score: number, p2Score: number) => void;
   resetGame: () => void;
 
-  ws: WebSocket | null;
-  connectWS: (roomId: string) => void;
-  disconnectWS: () => void;
+  // Peer-to-peer multiplayer (no backend). roomId is the short room code.
+  hostRoom: () => Promise<void>;
+  joinRoom: (code: string) => void;
+  disconnect: () => void;
   sendChoice: (cardId: string, statKey: string) => void;
 
   error: string | null;
@@ -45,151 +48,108 @@ const initialGame: GameState = {
   transferredCard: null,
 };
 
-export const useStore = create<Store>((set, get) => ({
-  demoCards: [],
-  isLoadingDemo: false,
-  error: null,
+export const useStore = create<Store>((set, get) => {
+  // Wire the P2P layer's events to store actions (once).
+  peerNet.setDispatch({
+    onRoomReady: () => get().setGameStatus('dealing'),
+    onDealHand: (hand, slot) => get().dealHand(hand, slot),
+    onOpponentReady: () => get().setOpponentReady(),
+    onRoundResult: (result, p1, p2) => get().applyRoundResult(result, p1, p2),
+    onGameOver: (winnerSlot, p1, p2) => get().setGameOver(winnerSlot, null, p1, p2),
+    onError: (msg) => get().setError(msg),
+  });
 
-  fetchDemoCards: async () => {
-    set({ isLoadingDemo: true });
-    try {
-      const res = await fetch('http://localhost:8080/api/cards/demo');
-      const data = await res.json();
-      set({ demoCards: data.cards || [], isLoadingDemo: false });
-    } catch {
-      set({ isLoadingDemo: false, error: 'Failed to load cards' });
-    }
-  },
+  return {
+    demoCards: [],
+    isLoadingDemo: false,
+    error: null,
 
-  game: initialGame,
+    // No backend: the demo pack ships with the client.
+    fetchDemoCards: async () => {
+      set({ demoCards: demoPack as Card[], isLoadingDemo: false });
+    },
 
-  setRoomId: (id) => set((s) => ({ game: { ...s.game, roomId: id } })),
-  setPlayerSlot: (slot) => set((s) => ({ game: { ...s.game, playerSlot: slot } })),
+    game: initialGame,
 
-  dealHand: (hand, slot) =>
-    set((s) => ({
-      game: {
-        ...s.game,
-        hand,
-        playerSlot: slot,
-        status: 'choosing',
-        opponentCardCount: 5,
-      },
-    })),
+    setRoomId: (id) => set((s) => ({ game: { ...s.game, roomId: id } })),
+    setPlayerSlot: (slot) => set((s) => ({ game: { ...s.game, playerSlot: slot } })),
 
-  selectCard: (card) => set((s) => ({ game: { ...s.game, selectedCard: card } })),
+    dealHand: (hand, slot) =>
+      set((s) => ({
+        game: { ...s.game, hand, playerSlot: slot, status: 'choosing', opponentCardCount: 5 },
+      })),
 
-  selectStat: (stat) => {
-    const { game, sendChoice } = get();
-    set((s) => ({ game: { ...s.game, selectedStat: stat, status: 'waiting_choice' } }));
-    if (game.selectedCard) {
-      sendChoice(game.selectedCard.id, stat);
-    }
-  },
+    selectCard: (card) => set((s) => ({ game: { ...s.game, selectedCard: card } })),
 
-  applyRoundResult: (result, p1Score, p2Score) =>
-    set((s) => ({
-      game: {
-        ...s.game,
-        lastResult: result,
-        p1Score,
-        p2Score,
-        currentRound: s.game.currentRound + 1,
-        rounds: [...s.game.rounds, result],
-        selectedCard: null,
-        selectedStat: null,
-        status: 'resolving',
-      },
-    })),
-
-  setGameStatus: (status) => set((s) => ({ game: { ...s.game, status } })),
-
-  setOpponentReady: () =>
-    set((s) => ({
-      game: {
-        ...s.game,
-        status: s.game.status === 'idle' ? 'waiting_opponent' : s.game.status,
-      },
-    })),
-
-  setGameOver: (winnerSlot, transferredCard, p1Score, p2Score) =>
-    set((s) => ({
-      game: {
-        ...s.game,
-        status: 'finished',
-        winnerSlot,
-        transferredCard,
-        p1Score,
-        p2Score,
-      },
-    })),
-
-  resetGame: () => set({ game: initialGame }),
-  setError: (msg) => set({ error: msg }),
-
-  ws: null,
-
-  connectWS: (roomId) => {
-    const existing = get().ws;
-    if (existing) existing.close();
-
-    const ws = new WebSocket(`ws://localhost:8080/ws?room_id=${roomId}`);
-
-    ws.onopen = () => console.log('WS connected');
-
-    ws.onmessage = (event) => {
-      try {
-        const msg = JSON.parse(event.data);
-        const { dealHand, applyRoundResult, setGameStatus, setOpponentReady, setGameOver, setError } = get();
-        switch (msg.type) {
-          case 'room_ready':
-            setGameStatus('dealing');
-            break;
-          case 'deal_hand':
-            dealHand(msg.payload.hand, msg.payload.player_slot);
-            break;
-          case 'opponent_ready':
-            setOpponentReady();
-            break;
-          case 'round_result':
-            applyRoundResult(msg.payload.result, msg.payload.p1_score, msg.payload.p2_score);
-            break;
-          case 'game_over':
-            setGameOver(
-              msg.payload.winner_slot,
-              msg.payload.transferred_card || null,
-              msg.payload.final_p1_score,
-              msg.payload.final_p2_score
-            );
-            break;
-          case 'error':
-            setError(msg.payload.message);
-            break;
-        }
-      } catch (e) {
-        console.error('WS parse error', e);
+    selectStat: (stat) => {
+      const { game, sendChoice } = get();
+      set((s) => ({ game: { ...s.game, selectedStat: stat, status: 'waiting_choice' } }));
+      if (game.selectedCard) {
+        sendChoice(game.selectedCard.id, stat);
       }
-    };
+    },
 
-    ws.onclose = () => {
-      console.log('WS disconnected');
-      set({ ws: null });
-    };
+    applyRoundResult: (result, p1Score, p2Score) =>
+      set((s) => ({
+        game: {
+          ...s.game,
+          lastResult: result,
+          p1Score,
+          p2Score,
+          currentRound: s.game.currentRound + 1,
+          rounds: [...s.game.rounds, result],
+          selectedCard: null,
+          selectedStat: null,
+          status: 'resolving',
+        },
+      })),
 
-    ws.onerror = (e) => console.error('WS error', e);
+    setGameStatus: (status) => set((s) => ({ game: { ...s.game, status } })),
 
-    set({ ws });
-  },
+    setOpponentReady: () =>
+      set((s) => ({
+        game: {
+          ...s.game,
+          status: s.game.status === 'idle' ? 'waiting_opponent' : s.game.status,
+        },
+      })),
 
-  disconnectWS: () => {
-    get().ws?.close();
-    set({ ws: null });
-  },
+    setGameOver: (winnerSlot, transferredCard, p1Score, p2Score) =>
+      set((s) => ({
+        game: { ...s.game, status: 'finished', winnerSlot, transferredCard, p1Score, p2Score },
+      })),
 
-  sendChoice: (cardId, statKey) => {
-    const ws = get().ws;
-    if (ws && ws.readyState === WebSocket.OPEN) {
-      ws.send(JSON.stringify({ type: 'submit_choice', payload: { card_id: cardId, stat_key: statKey } }));
-    }
-  },
-}));
+    resetGame: () => {
+      peerNet.disconnect();
+      set({ game: initialGame });
+    },
+    setError: (msg) => set({ error: msg }),
+
+    // ---- P2P room control ----
+
+    hostRoom: async () => {
+      set({ error: null });
+      try {
+        const code = await peerNet.host(demoPack as Card[]);
+        set((s) => ({ game: { ...s.game, roomId: code, playerSlot: 1, status: 'idle' } }));
+      } catch (e) {
+        set({ error: 'Could not create room. Try again.' });
+        console.error(e);
+      }
+    },
+
+    joinRoom: (code) => {
+      set({ error: null });
+      peerNet.join(code);
+      set((s) => ({ game: { ...s.game, roomId: code.toUpperCase(), playerSlot: 2 } }));
+    },
+
+    disconnect: () => {
+      peerNet.disconnect();
+    },
+
+    sendChoice: (cardId, statKey) => {
+      peerNet.submitChoice(cardId, statKey as StatKey);
+    },
+  };
+});

@@ -1,0 +1,108 @@
+.pack-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 28px; padding: 24px;
+  background:
+    radial-gradient(900px 600px at 50% 30%, rgba(43,245,154,0.12), transparent 60%),
+    radial-gradient(700px 500px at 50% 80%, rgba(160,107,255,0.12), transparent 60%),
+    rgba(3, 6, 12, 0.92);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+
+.pack-close {
+  position: absolute; top: 18px; right: 20px; z-index: 10;
+  background: rgba(255,255,255,0.06); border: 1px solid var(--line);
+  color: var(--text2); padding: 8px 16px; border-radius: 999px; font-size: 13px;
+}
+.pack-close:hover { color: #fff; border-color: var(--text2); }
+
+/* legendary rays behind the stage */
+.pack-rays {
+  position: absolute; top: 50%; left: 50%; width: 1400px; height: 1400px;
+  margin: -700px 0 0 -700px; pointer-events: none; opacity: 0.5;
+  background: repeating-conic-gradient(from 0deg,
+    rgba(244,207,107,0.10) 0deg 8deg, transparent 8deg 22deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, transparent 60%);
+  mask-image: radial-gradient(circle, #000 0%, transparent 60%);
+}
+
+/* ---- closed pack ---- */
+.pack-closed {
+  display: flex; flex-direction: column; align-items: center; gap: 22px;
+}
+.pack-box {
+  width: 210px; height: 300px; border-radius: 20px; position: relative;
+  background: linear-gradient(160deg, #15233c, #0a1322);
+  border: 1.5px solid var(--line);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  overflow: hidden; cursor: pointer;
+}
+.pack-box::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.14) 50%, transparent 70%);
+  transform: translateX(-100%); animation: sweep 2.6s ease-in-out infinite;
+}
+.pack-crest { font-size: 64px; filter: drop-shadow(0 6px 14px rgba(43,245,154,0.4)); }
+.pack-box .pack-word {
+  font-family: 'Anton', sans-serif; font-size: 26px; letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--live), var(--accent));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.pack-tier {
+  font-family: 'Oswald', sans-serif; letter-spacing: 4px; font-size: 12px; color: var(--text2);
+}
+
+.pack-open-btn {
+  font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 2px; font-size: 16px;
+  padding: 14px 40px; border-radius: 999px; color: #04130b;
+  background: linear-gradient(135deg, var(--live), #19c47b);
+  box-shadow: 0 12px 34px rgba(43,245,154,0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.pack-open-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(43,245,154,0.5); }
+
+/* scraping ticker (Anakin flavor) */
+.pack-scrape {
+  font-family: 'Oswald', sans-serif; letter-spacing: 1px; font-size: 14px;
+  color: var(--live); min-height: 22px; text-align: center;
+}
+.pack-scrape .muted { color: var(--text2); }
+
+/* ---- reveal stage ---- */
+.pack-stage {
+  display: flex; gap: 16px; align-items: flex-end; justify-content: center;
+  flex-wrap: wrap; max-width: 1100px; position: relative; z-index: 2;
+}
+.pack-slot { position: relative; }
+.pack-slot.is-best .walkout { z-index: 3; }
+.pack-burst {
+  position: absolute; top: 50%; left: 50%; width: 320px; height: 320px;
+  margin: -160px 0 0 -160px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(244,207,107,0.7), transparent 60%);
+}
+
+/* face-down placeholder */
+.pack-down {
+  width: 200px; height: 290px; border-radius: 16px;
+  background: linear-gradient(160deg, #15233c, #0a1322);
+  border: 1.5px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px; color: var(--text2); position: relative; overflow: hidden;
+}
+.pack-down::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.10) 50%, transparent 65%);
+  transform: translateX(-100%); animation: sweep 2.2s ease-in-out infinite;
+}
+
+.pack-head {
+  text-align: center; z-index: 2;
+}
+.pack-head h2 {
+  font-family: 'Anton', sans-serif; font-size: 30px; letter-spacing: 1px;
+  background: linear-gradient(135deg, #fff, var(--live));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.pack-head p { color: var(--text2); font-size: 13px; margin-top: 4px; }

@@ -3,15 +3,17 @@ import { useAuth } from '../../web3/useAuth';
 
 const short = (a: string) => `${a.slice(0, 6)}…${a.slice(-4)}`;
 
-/** Shown once after login if the wallet has no on-chain username yet. */
-export const UsernamePrompt: React.FC = () => {
-  const { id, register, busy, error, logout, contractConfigured } = useAuth();
+/** Optional: claim an on-chain username. Reachable from the profile bar — not a
+ *  gate. Login already works without this (and without any test ETH). */
+export const UsernamePrompt: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
+  const { id, register, busy, error, contractConfigured } = useAuth();
   const [name, setName] = useState('');
 
   const submit = async () => {
     const n = name.trim();
     if (n.length < 2 || n.length > 24) return;
-    await register(n);
+    const ok = await register(n);
+    if (ok) onClose?.();
   };
 
   return (
@@ -25,15 +27,16 @@ export const UsernamePrompt: React.FC = () => {
         display: 'flex', flexDirection: 'column', gap: 16,
       }}>
         <div style={{ fontSize: 40 }}>🏷️</div>
-        <h3 style={{ color: 'var(--gold)' }}>Claim your name</h3>
+        <h3 style={{ color: 'var(--gold)' }}>Claim your name (optional)</h3>
         <p style={{ color: 'var(--text2)', fontSize: 13, lineHeight: 1.5 }}>
           {id && <>Wallet <strong>{short(id)}</strong> is connected. </>}
-          Register a username on-chain (Sepolia) so opponents see who they're facing.
+          Register a username on-chain (Sepolia) so opponents see a name instead of your
+          address. This one action needs a little test ETH for gas — playing doesn't.
         </p>
         {!contractConfigured && (
           <div style={{ color: '#f59e0b', fontSize: 12 }}>
             Contract not deployed yet — deploy it and set VITE_IDENTITY_ADDRESS, or
-            <button onClick={logout} style={{ color: 'var(--accent)', textDecoration: 'underline', marginLeft: 4 }}>
+            <button onClick={onClose} style={{ color: 'var(--accent)', textDecoration: 'underline', marginLeft: 4 }}>
               go back
             </button>
           </div>
@@ -64,7 +67,7 @@ export const UsernamePrompt: React.FC = () => {
           {busy ? 'Confirm in wallet…' : 'Register on-chain →'}
         </button>
         {error && <div style={{ color: '#ef4444', fontSize: 12 }}>{error}</div>}
-        <button onClick={logout} style={{ color: 'var(--text2)', fontSize: 12 }}>Log out</button>
+        <button onClick={onClose} style={{ color: 'var(--text2)', fontSize: 12 }}>Skip — play without a name</button>
       </div>
     </div>
   );

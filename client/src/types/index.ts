@@ -16,6 +16,7 @@ export interface FormRating {
   match_date: string;
   opponent: string;
   rating: number;
+  meme?: string;
 }
 
 export interface Card {

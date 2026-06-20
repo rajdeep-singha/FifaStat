@@ -4,7 +4,7 @@ import './styles/animations.css';
 import { useStore } from './store';
 import { LobbyScreen } from './components/lobby/LobbyScreen';
 import { Arena } from './components/game/Arena';
-import { CardFace } from './components/card/CardFace';
+import { PackOpening } from './components/pack/PackOpening';
 import { useAuth } from './web3/useAuth';
 import { LoginScreen } from './components/auth/LoginScreen';
 import { UsernamePrompt } from './components/auth/UsernamePrompt';
@@ -12,82 +12,31 @@ import { ProfileBar } from './components/auth/ProfileBar';
 
 function App() {
   const { game, demoCards, fetchDemoCards } = useStore();
-  const { isLoggedIn, registered, contractConfigured } = useAuth();
-  const [showDemo, setShowDemo] = useState(false);
-  const [revealedIdx, setRevealedIdx] = useState(-1);
+  const { isLoggedIn } = useAuth();
+  const [showcase, setShowcase] = useState(false);
+  const [editingName, setEditingName] = useState(false);
 
   useEffect(() => { fetchDemoCards(); }, []);
 
-  const startPackReveal = () => {
-    setShowDemo(true);
-    setRevealedIdx(-1);
-    [0, 1, 2, 3, 4].forEach((i) => setTimeout(() => setRevealedIdx(i), 300 + i * 400));
-  };
+  // Pack opening is a showcase — playable before login too (no wallet needed to look).
+  if (showcase && demoCards.length > 0) {
+    return <PackOpening cards={demoCards} onClose={() => setShowcase(false)} />;
+  }
 
   // ---- on-chain auth gate (no backend) ----
-  if (!isLoggedIn) return <LoginScreen />;
-  // logged in but no on-chain username yet (only enforced once the contract is live)
-  if (contractConfigured && !registered) return <UsernamePrompt />;
+  // Login = connect wallet + sign (FREE, no gas). That's all it takes to play.
+  // Setting an on-chain username is optional and is the only thing that needs test ETH.
+  if (!isLoggedIn) return <LoginScreen onPreview={() => setShowcase(true)} />;
 
   const isInGame = ['dealing', 'choosing', 'waiting_choice', 'resolving', 'finished'].includes(game.status);
 
   if (isInGame) return <Arena />;
+  if (editingName) return <UsernamePrompt onClose={() => setEditingName(false)} />;
 
   return (
     <div style={{ minHeight: '100vh' }}>
-      <ProfileBar />
-      {showDemo && demoCards.length > 0 ? (
-        <div style={{ padding: 20 }}>
-          <button
-            onClick={() => setShowDemo(false)}
-            style={{
-              background: 'var(--bg3)', color: 'white', padding: '8px 16px',
-              borderRadius: 8, marginBottom: 24, fontSize: 14,
-            }}
-          >
-            ← Back
-          </button>
-          <h2 style={{ color: 'var(--gold)', marginBottom: 20, textAlign: 'center' }}>Pack Opening</h2>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            {demoCards.slice(0, 5).map((card, i) => (
-              <div key={card.id}>
-                {i <= revealedIdx ? (
-                  <CardFace
-                    card={card}
-                    isRevealing={i === revealedIdx}
-                    size={i === 4 ? 'arena' : 'hand'}
-                  />
-                ) : (
-                  <div style={{
-                    width: 180, height: 260,
-                    background: 'var(--bg2)', border: '2px solid var(--bg3)',
-                    borderRadius: 12,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 32, color: 'var(--text2)',
-                  }}>?</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div>
-          <LobbyScreen />
-          {demoCards.length > 0 && (
-            <div style={{ textAlign: 'center', paddingBottom: 40 }}>
-              <button
-                onClick={startPackReveal}
-                style={{
-                  background: 'transparent', border: '1px solid var(--bg3)',
-                  color: 'var(--text2)', padding: '10px 20px', borderRadius: 8, fontSize: 13,
-                }}
-              >
-                👀 Preview Cards
-              </button>
-            </div>
-          )}
-        </div>
-      )}
+      <ProfileBar onEditName={() => setEditingName(true)} />
+      <LobbyScreen onOpenPack={() => setShowcase(true)} />
     </div>
   );
 }

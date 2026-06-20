@@ -2,7 +2,7 @@ import { useAuth } from '../../web3/useAuth';
 
 const short = (a: string) => `${a.slice(0, 6)}…${a.slice(-4)}`;
 
-export const LoginScreen: React.FC = () => {
+export const LoginScreen: React.FC<{ onPreview?: () => void }> = ({ onPreview }) => {
   const { isLoggedIn, login, busy, error, id } = useAuth();
 
   if (isLoggedIn) return null;
@@ -32,8 +32,8 @@ export const LoginScreen: React.FC = () => {
       }}>
         <h3 style={{ color: 'var(--gold)' }}>Sign in with your wallet</h3>
         <p style={{ color: 'var(--text2)', fontSize: 13, lineHeight: 1.5 }}>
-          Your wallet address is your CardClash ID — no signup, no password, no server.
-          Connect on <strong>Sepolia</strong> testnet to play.
+          Your wallet address is your CardClash ID — no signup, no password, no server,
+          and <strong>no test ETH needed</strong>. Just connect and sign — signing is free.
         </p>
         <button
           onClick={login}
@@ -50,14 +50,21 @@ export const LoginScreen: React.FC = () => {
           <div style={{ fontSize: 12, color: 'var(--text2)' }}>Detected {short(id)} — sign to continue</div>
         )}
         {error && <div style={{ color: '#ef4444', fontSize: 12 }}>{error}</div>}
-        <a
-          href="https://sepoliafaucet.com"
-          target="_blank"
-          rel="noreferrer"
-          style={{ fontSize: 11, color: 'var(--text2)', textDecoration: 'underline' }}
-        >
-          Need test ETH? Get some from a Sepolia faucet →
-        </a>
+        {onPreview && (
+          <button
+            onClick={onPreview}
+            style={{
+              background: 'transparent', border: '1px solid var(--line)',
+              color: 'var(--text)', padding: '11px 18px', borderRadius: 999,
+              fontFamily: "'Oswald', sans-serif", fontWeight: 600, letterSpacing: 1, fontSize: 13,
+            }}
+          >
+            ⚡ Open a pack first — no wallet needed
+          </button>
+        )}
+        <span style={{ fontSize: 11, color: 'var(--text2)' }}>
+          Test ETH is only needed later if you want to claim an on-chain username.
+        </span>
       </div>
     </div>
   );

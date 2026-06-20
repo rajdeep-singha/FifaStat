@@ -1,32 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0a0e1a;
-  --bg2: #111827;
-  --bg3: #1f2937;
-  --text: #f0f4ff;
-  --text2: #9ca3af;
-  --accent: #3b82f6;
-  --gold: #c8a227;
-  --silver: #a8b2c0;
-  --bronze: #b87333;
-  --win: #22c55e;
-  --loss: #ef4444;
+  /* midnight pitch */
+  --pitch:  #05080f;
+  --pitch2: #0a1020;
+  --panel:  #0e1626;
+  --panel2: #16223a;
+  --line:   #223149;
+
+  --text:  #eaf1ff;
+  --text2: #8595ad;
+
+  /* energy accents */
+  --live:   #2bf59a;   /* on-the-pitch / form-up green */
+  --social: #a06bff;   /* meme / social violet */
+  --accent: #38bdf8;   /* electric cyan */
+  --win:    #2bf59a;
+  --loss:   #ff5470;
+
+  /* rarity foils */
+  --gold:   #f4cf6b;
+  --silver: #cdd9e6;
+  --bronze: #e09354;
+
+  /* legacy aliases used by older components */
+  --bg:  var(--pitch);
+  --bg2: var(--panel);
+  --bg3: var(--panel2);
+
+  --r: 16px;
+  --shadow: 0 18px 50px rgba(0,0,0,0.55);
 }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(43,245,154,0.10), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, rgba(160,107,255,0.10), transparent 55%),
+    radial-gradient(900px 600px at 10% 90%, rgba(56,189,248,0.08), transparent 55%),
+    var(--pitch);
   color: var(--text);
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* faint stadium turf bands */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  background-image: repeating-linear-gradient(
+    115deg, transparent 0 70px, rgba(255,255,255,0.012) 70px 140px);
+  pointer-events: none;
 }
 
-button { cursor: pointer; border: none; font-family: inherit; }
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+
+button { cursor: pointer; border: none; font-family: inherit; color: inherit; }
 input  { font-family: inherit; }
+a { color: var(--accent); }
+
+::selection { background: var(--live); color: #03110a; }
+
+.display { font-family: 'Anton', sans-serif; letter-spacing: 0.5px; }
+.mono    { font-family: 'Oswald', sans-serif; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

@@ -6,17 +6,56 @@
     "nation": "France",
     "position": "ATK",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/2019-07-17_SG_Dynamo_Dresden_vs_Paris_Saint-Germain_FC_by_Sandro_Halank%E2%80%93105.jpg/800px-2019-07-17_SG_Dynamo_Dresden_vs_Paris_Saint-Germain_FC_by_Sandro_Halank%E2%80%93105.jpg",
-    "base_stats": {"pac": 97, "sho": 89, "pas": 80, "dri": 92, "def": 36, "phy": 78},
+    "base_stats": {
+      "pac": 97,
+      "sho": 89,
+      "pas": 80,
+      "dri": 92,
+      "def": 36,
+      "phy": 78
+    },
     "overall": 91,
     "form": [
-      {"match_date": "2026-06-15", "opponent": "Bayern Munich", "rating": 9.2},
-      {"match_date": "2026-06-08", "opponent": "Atletico Madrid", "rating": 8.7},
-      {"match_date": "2026-06-01", "opponent": "Sevilla", "rating": 7.8},
-      {"match_date": "2026-05-25", "opponent": "Valencia", "rating": 9.0},
-      {"match_date": "2026-05-18", "opponent": "Villarreal", "rating": 8.5}
+      {
+        "match_date": "2026-06-15",
+        "opponent": "Bayern Munich",
+        "rating": 9.2,
+        "meme": "absolute cyborg mode vs Bayern Munich"
+      },
+      {
+        "match_date": "2026-06-08",
+        "opponent": "Atletico Madrid",
+        "rating": 8.7,
+        "meme": "bullied Atletico Madrid for 90 mins"
+      },
+      {
+        "match_date": "2026-06-01",
+        "opponent": "Sevilla",
+        "rating": 7.8,
+        "meme": "did his job against Sevilla"
+      },
+      {
+        "match_date": "2026-05-25",
+        "opponent": "Valencia",
+        "rating": 9,
+        "meme": "unplayable against Valencia"
+      },
+      {
+        "match_date": "2026-05-18",
+        "opponent": "Villarreal",
+        "rating": 8.5,
+        "meme": "casual masterclass against Villarreal"
+      }
     ],
     "form_delta": 5,
-    "eff_stats": {"pac": 99, "sho": 93, "pas": 84, "dri": 97, "def": 38, "phy": 82},
+    "eff_stats": {
+      "pac": 99,
+      "sho": 93,
+      "pas": 84,
+      "dri": 97,
+      "def": 38,
+      "phy": 82
+    },
     "meme_tagline": "He just doesn't stop cyborg mode activated",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -28,17 +67,56 @@
     "nation": "Egypt",
     "position": "ATK",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Mohamed_Salah_2018.jpg/800px-Mohamed_Salah_2018.jpg",
-    "base_stats": {"pac": 91, "sho": 88, "pas": 81, "dri": 90, "def": 45, "phy": 75},
+    "base_stats": {
+      "pac": 91,
+      "sho": 88,
+      "pas": 81,
+      "dri": 90,
+      "def": 45,
+      "phy": 75
+    },
     "overall": 89,
     "form": [
-      {"match_date": "2026-06-14", "opponent": "Arsenal", "rating": 9.5},
-      {"match_date": "2026-06-07", "opponent": "Man City", "rating": 8.2},
-      {"match_date": "2026-05-31", "opponent": "Chelsea", "rating": 7.5},
-      {"match_date": "2026-05-24", "opponent": "Tottenham", "rating": 8.8},
-      {"match_date": "2026-05-17", "opponent": "Everton", "rating": 9.1}
+      {
+        "match_date": "2026-06-14",
+        "opponent": "Arsenal",
+        "rating": 9.5,
+        "meme": "carried the whole squad past Arsenal"
+      },
+      {
+        "match_date": "2026-06-07",
+        "opponent": "Man City",
+        "rating": 8.2,
+        "meme": "ran the show vs Man City"
+      },
+      {
+        "match_date": "2026-05-31",
+        "opponent": "Chelsea",
+        "rating": 7.5,
+        "meme": "kept it ticking against Chelsea"
+      },
+      {
+        "match_date": "2026-05-24",
+        "opponent": "Tottenham",
+        "rating": 8.8,
+        "meme": "Tottenham defenders still dizzy"
+      },
+      {
+        "match_date": "2026-05-17",
+        "opponent": "Everton",
+        "rating": 9.1,
+        "meme": "unplayable against Everton"
+      }
     ],
     "form_delta": 5,
-    "eff_stats": {"pac": 96, "sho": 93, "pas": 85, "dri": 95, "def": 47, "phy": 79},
+    "eff_stats": {
+      "pac": 96,
+      "sho": 93,
+      "pas": 85,
+      "dri": 95,
+      "def": 47,
+      "phy": 79
+    },
     "meme_tagline": "Mo Salah running the league again, unreal",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -50,17 +128,56 @@
     "nation": "Norway",
     "position": "ATK",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Erling_Haaland_2023.jpg/800px-Erling_Haaland_2023.jpg",
-    "base_stats": {"pac": 89, "sho": 95, "pas": 65, "dri": 80, "def": 45, "phy": 88},
+    "base_stats": {
+      "pac": 89,
+      "sho": 95,
+      "pas": 65,
+      "dri": 80,
+      "def": 45,
+      "phy": 88
+    },
     "overall": 91,
     "form": [
-      {"match_date": "2026-06-13", "opponent": "Arsenal", "rating": 9.8},
-      {"match_date": "2026-06-06", "opponent": "Real Madrid", "rating": 9.5},
-      {"match_date": "2026-05-30", "opponent": "Newcastle", "rating": 8.0},
-      {"match_date": "2026-05-23", "opponent": "Liverpool", "rating": 7.2},
-      {"match_date": "2026-05-16", "opponent": "Brighton", "rating": 8.9}
+      {
+        "match_date": "2026-06-13",
+        "opponent": "Arsenal",
+        "rating": 9.8,
+        "meme": "unplayable against Arsenal"
+      },
+      {
+        "match_date": "2026-06-06",
+        "opponent": "Real Madrid",
+        "rating": 9.5,
+        "meme": "carried the whole squad past Real Madrid"
+      },
+      {
+        "match_date": "2026-05-30",
+        "opponent": "Newcastle",
+        "rating": 8,
+        "meme": "ran the show vs Newcastle"
+      },
+      {
+        "match_date": "2026-05-23",
+        "opponent": "Liverpool",
+        "rating": 7.2,
+        "meme": "kept it ticking against Liverpool"
+      },
+      {
+        "match_date": "2026-05-16",
+        "opponent": "Brighton",
+        "rating": 8.9,
+        "meme": "Brighton defenders still dizzy"
+      }
     ],
     "form_delta": 5,
-    "eff_stats": {"pac": 93, "sho": 99, "pas": 68, "dri": 84, "def": 47, "phy": 92},
+    "eff_stats": {
+      "pac": 93,
+      "sho": 99,
+      "pas": 68,
+      "dri": 84,
+      "def": 47,
+      "phy": 92
+    },
     "meme_tagline": "The cyborg strikes again. Hat trick. Again.",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -72,17 +189,56 @@
     "nation": "Brazil",
     "position": "ATK",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/20191005_FIFA_Women%27s_World_Cup_France_2019_Trophy_Tour_Vienna_-_Vinicius_Jr._%28cropped%29.jpg/800px-20191005_FIFA_Women%27s_World_Cup_France_2019_Trophy_Tour_Vienna_-_Vinicius_Jr._%28cropped%29.jpg",
-    "base_stats": {"pac": 95, "sho": 83, "pas": 79, "dri": 94, "def": 28, "phy": 68},
+    "base_stats": {
+      "pac": 95,
+      "sho": 83,
+      "pas": 79,
+      "dri": 94,
+      "def": 28,
+      "phy": 68
+    },
     "overall": 88,
     "form": [
-      {"match_date": "2026-06-15", "opponent": "Bayern Munich", "rating": 8.8},
-      {"match_date": "2026-06-08", "opponent": "Atletico", "rating": 7.5},
-      {"match_date": "2026-06-01", "opponent": "Sevilla", "rating": 6.0},
-      {"match_date": "2026-05-25", "opponent": "Valencia", "rating": 7.2},
-      {"match_date": "2026-05-18", "opponent": "Villarreal", "rating": 8.0}
+      {
+        "match_date": "2026-06-15",
+        "opponent": "Bayern Munich",
+        "rating": 8.8,
+        "meme": "Bayern Munich defenders still dizzy"
+      },
+      {
+        "match_date": "2026-06-08",
+        "opponent": "Atletico",
+        "rating": 7.5,
+        "meme": "steady hand vs Atletico"
+      },
+      {
+        "match_date": "2026-06-01",
+        "opponent": "Sevilla",
+        "rating": 6,
+        "meme": "Sevilla had his number today"
+      },
+      {
+        "match_date": "2026-05-25",
+        "opponent": "Valencia",
+        "rating": 7.2,
+        "meme": "quietly bossed it vs Valencia"
+      },
+      {
+        "match_date": "2026-05-18",
+        "opponent": "Villarreal",
+        "rating": 8,
+        "meme": "bullied Villarreal for 90 mins"
+      }
     ],
     "form_delta": 2,
-    "eff_stats": {"pac": 97, "sho": 85, "pas": 81, "dri": 96, "def": 29, "phy": 70},
+    "eff_stats": {
+      "pac": 97,
+      "sho": 85,
+      "pas": 81,
+      "dri": 96,
+      "def": 29,
+      "phy": 70
+    },
     "meme_tagline": "Dancing through defenders like nobody else on earth",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -94,17 +250,56 @@
     "nation": "England",
     "position": "MID",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Jude_Bellingham_2022_%28cropped%29.jpg/800px-Jude_Bellingham_2022_%28cropped%29.jpg",
-    "base_stats": {"pac": 82, "sho": 84, "pas": 87, "dri": 88, "def": 75, "phy": 82},
+    "base_stats": {
+      "pac": 82,
+      "sho": 84,
+      "pas": 87,
+      "dri": 88,
+      "def": 75,
+      "phy": 82
+    },
     "overall": 88,
     "form": [
-      {"match_date": "2026-06-15", "opponent": "Bayern Munich", "rating": 9.1},
-      {"match_date": "2026-06-08", "opponent": "Atletico", "rating": 8.5},
-      {"match_date": "2026-06-01", "opponent": "Sevilla", "rating": 8.0},
-      {"match_date": "2026-05-25", "opponent": "Valencia", "rating": 7.8},
-      {"match_date": "2026-05-18", "opponent": "Villarreal", "rating": 8.3}
+      {
+        "match_date": "2026-06-15",
+        "opponent": "Bayern Munich",
+        "rating": 9.1,
+        "meme": "send the Ballon dOr already, Bayern Munich were helpless"
+      },
+      {
+        "match_date": "2026-06-08",
+        "opponent": "Atletico",
+        "rating": 8.5,
+        "meme": "Atletico defenders still dizzy"
+      },
+      {
+        "match_date": "2026-06-01",
+        "opponent": "Sevilla",
+        "rating": 8,
+        "meme": "pulled the strings vs Sevilla"
+      },
+      {
+        "match_date": "2026-05-25",
+        "opponent": "Valencia",
+        "rating": 7.8,
+        "meme": "solid, no fuss vs Valencia"
+      },
+      {
+        "match_date": "2026-05-18",
+        "opponent": "Villarreal",
+        "rating": 8.3,
+        "meme": "ran the show vs Villarreal"
+      }
     ],
     "form_delta": 5,
-    "eff_stats": {"pac": 86, "sho": 88, "pas": 91, "dri": 92, "def": 79, "phy": 86},
+    "eff_stats": {
+      "pac": 86,
+      "sho": 88,
+      "pas": 91,
+      "dri": 92,
+      "def": 79,
+      "phy": 86
+    },
     "meme_tagline": "Bellingham doing Bellingham things. Inevitable.",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -116,17 +311,56 @@
     "nation": "Spain",
     "position": "MID",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Rodri_%282022%29.jpg/800px-Rodri_%282022%29.jpg",
-    "base_stats": {"pac": 72, "sho": 72, "pas": 90, "dri": 82, "def": 91, "phy": 85},
+    "base_stats": {
+      "pac": 72,
+      "sho": 72,
+      "pas": 90,
+      "dri": 82,
+      "def": 91,
+      "phy": 85
+    },
     "overall": 91,
     "form": [
-      {"match_date": "2026-06-13", "opponent": "Arsenal", "rating": 8.5},
-      {"match_date": "2026-06-06", "opponent": "Real Madrid", "rating": 7.9},
-      {"match_date": "2026-05-30", "opponent": "Newcastle", "rating": 8.2},
-      {"match_date": "2026-05-23", "opponent": "Liverpool", "rating": 8.0},
-      {"match_date": "2026-05-16", "opponent": "Brighton", "rating": 8.4}
+      {
+        "match_date": "2026-06-13",
+        "opponent": "Arsenal",
+        "rating": 8.5,
+        "meme": "ran the show vs Arsenal"
+      },
+      {
+        "match_date": "2026-06-06",
+        "opponent": "Real Madrid",
+        "rating": 7.9,
+        "meme": "kept it ticking against Real Madrid"
+      },
+      {
+        "match_date": "2026-05-30",
+        "opponent": "Newcastle",
+        "rating": 8.2,
+        "meme": "Newcastle defenders still dizzy"
+      },
+      {
+        "match_date": "2026-05-23",
+        "opponent": "Liverpool",
+        "rating": 8,
+        "meme": "pulled the strings vs Liverpool"
+      },
+      {
+        "match_date": "2026-05-16",
+        "opponent": "Brighton",
+        "rating": 8.4,
+        "meme": "casual masterclass against Brighton"
+      }
     ],
     "form_delta": 5,
-    "eff_stats": {"pac": 76, "sho": 76, "pas": 94, "dri": 86, "def": 96, "phy": 89},
+    "eff_stats": {
+      "pac": 76,
+      "sho": 76,
+      "pas": 94,
+      "dri": 86,
+      "def": 96,
+      "phy": 89
+    },
     "meme_tagline": "Rodri controlling the tempo. Football at its purest.",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -138,17 +372,56 @@
     "nation": "Belgium",
     "position": "MID",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Kevin_De_Bruyne_2018_%28cropped%29.jpg/800px-Kevin_De_Bruyne_2018_%28cropped%29.jpg",
-    "base_stats": {"pac": 76, "sho": 86, "pas": 94, "dri": 87, "def": 64, "phy": 78},
+    "base_stats": {
+      "pac": 76,
+      "sho": 86,
+      "pas": 94,
+      "dri": 87,
+      "def": 64,
+      "phy": 78
+    },
     "overall": 90,
     "form": [
-      {"match_date": "2026-06-13", "opponent": "Arsenal", "rating": 7.5},
-      {"match_date": "2026-06-06", "opponent": "Real Madrid", "rating": 6.8},
-      {"match_date": "2026-05-30", "opponent": "Newcastle", "rating": 7.0},
-      {"match_date": "2026-05-23", "opponent": "Liverpool", "rating": 6.5},
-      {"match_date": "2026-05-16", "opponent": "Brighton", "rating": 7.2}
+      {
+        "match_date": "2026-06-13",
+        "opponent": "Arsenal",
+        "rating": 7.5,
+        "meme": "solid, no fuss vs Arsenal"
+      },
+      {
+        "match_date": "2026-06-06",
+        "opponent": "Real Madrid",
+        "rating": 6.8,
+        "meme": "anonymous against Real Madrid"
+      },
+      {
+        "match_date": "2026-05-30",
+        "opponent": "Newcastle",
+        "rating": 7,
+        "meme": "kept it ticking against Newcastle"
+      },
+      {
+        "match_date": "2026-05-23",
+        "opponent": "Liverpool",
+        "rating": 6.5,
+        "meme": "where was he vs Liverpool?"
+      },
+      {
+        "match_date": "2026-05-16",
+        "opponent": "Brighton",
+        "rating": 7.2,
+        "meme": "steady hand vs Brighton"
+      }
     ],
     "form_delta": 0,
-    "eff_stats": {"pac": 76, "sho": 86, "pas": 94, "dri": 87, "def": 64, "phy": 78},
+    "eff_stats": {
+      "pac": 76,
+      "sho": 86,
+      "pas": 94,
+      "dri": 87,
+      "def": 64,
+      "phy": 78
+    },
     "meme_tagline": "KDB assist incoming. Every. Single. Time.",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -160,17 +433,56 @@
     "nation": "Netherlands",
     "position": "DEF",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Virgil_van_Dijk_2019.jpg/800px-Virgil_van_Dijk_2019.jpg",
-    "base_stats": {"pac": 82, "sho": 60, "pas": 71, "dri": 72, "def": 91, "phy": 86},
+    "base_stats": {
+      "pac": 82,
+      "sho": 60,
+      "pas": 71,
+      "dri": 72,
+      "def": 91,
+      "phy": 86
+    },
     "overall": 88,
     "form": [
-      {"match_date": "2026-06-14", "opponent": "Arsenal", "rating": 8.8},
-      {"match_date": "2026-06-07", "opponent": "Man City", "rating": 9.0},
-      {"match_date": "2026-05-31", "opponent": "Chelsea", "rating": 8.5},
-      {"match_date": "2026-05-24", "opponent": "Tottenham", "rating": 8.2},
-      {"match_date": "2026-05-17", "opponent": "Everton", "rating": 9.1}
+      {
+        "match_date": "2026-06-14",
+        "opponent": "Arsenal",
+        "rating": 8.8,
+        "meme": "pulled the strings vs Arsenal"
+      },
+      {
+        "match_date": "2026-06-07",
+        "opponent": "Man City",
+        "rating": 9,
+        "meme": "carried the whole squad past Man City"
+      },
+      {
+        "match_date": "2026-05-31",
+        "opponent": "Chelsea",
+        "rating": 8.5,
+        "meme": "ran the show vs Chelsea"
+      },
+      {
+        "match_date": "2026-05-24",
+        "opponent": "Tottenham",
+        "rating": 8.2,
+        "meme": "bullied Tottenham for 90 mins"
+      },
+      {
+        "match_date": "2026-05-17",
+        "opponent": "Everton",
+        "rating": 9.1,
+        "meme": "Everton couldnt even foul him"
+      }
     ],
     "form_delta": 5,
-    "eff_stats": {"pac": 86, "sho": 63, "pas": 75, "dri": 76, "def": 96, "phy": 90},
+    "eff_stats": {
+      "pac": 86,
+      "sho": 63,
+      "pas": 75,
+      "dri": 76,
+      "def": 96,
+      "phy": 90
+    },
     "meme_tagline": "VVD making strikers cry since 2015. Absolute wall.",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -182,17 +494,56 @@
     "nation": "England",
     "position": "ATK",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Bukayo_Saka_2022_%28cropped%29.jpg/800px-Bukayo_Saka_2022_%28cropped%29.jpg",
-    "base_stats": {"pac": 88, "sho": 82, "pas": 83, "dri": 87, "def": 62, "phy": 68},
+    "base_stats": {
+      "pac": 88,
+      "sho": 82,
+      "pas": 83,
+      "dri": 87,
+      "def": 62,
+      "phy": 68
+    },
     "overall": 86,
     "form": [
-      {"match_date": "2026-06-14", "opponent": "Liverpool", "rating": 8.0},
-      {"match_date": "2026-06-07", "opponent": "Man City", "rating": 6.5},
-      {"match_date": "2026-05-31", "opponent": "Chelsea", "rating": 7.5},
-      {"match_date": "2026-05-24", "opponent": "Tottenham", "rating": 8.5},
-      {"match_date": "2026-05-17", "opponent": "Wolves", "rating": 7.8}
+      {
+        "match_date": "2026-06-14",
+        "opponent": "Liverpool",
+        "rating": 8,
+        "meme": "Liverpool defenders still dizzy"
+      },
+      {
+        "match_date": "2026-06-07",
+        "opponent": "Man City",
+        "rating": 6.5,
+        "meme": "off the boil against Man City"
+      },
+      {
+        "match_date": "2026-05-31",
+        "opponent": "Chelsea",
+        "rating": 7.5,
+        "meme": "solid, no fuss vs Chelsea"
+      },
+      {
+        "match_date": "2026-05-24",
+        "opponent": "Tottenham",
+        "rating": 8.5,
+        "meme": "ran the show vs Tottenham"
+      },
+      {
+        "match_date": "2026-05-17",
+        "opponent": "Wolves",
+        "rating": 7.8,
+        "meme": "kept it ticking against Wolves"
+      }
     ],
     "form_delta": 2,
-    "eff_stats": {"pac": 90, "sho": 84, "pas": 85, "dri": 89, "def": 63, "phy": 69},
+    "eff_stats": {
+      "pac": 90,
+      "sho": 84,
+      "pas": 85,
+      "dri": 89,
+      "def": 63,
+      "phy": 69
+    },
     "meme_tagline": "Saka cooking again. Arsenal's everything.",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -204,17 +555,56 @@
     "nation": "Spain",
     "position": "MID",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Pedri_FC_Barcelona_%28cropped%29.jpg/800px-Pedri_FC_Barcelona_%28cropped%29.jpg",
-    "base_stats": {"pac": 80, "sho": 75, "pas": 90, "dri": 91, "def": 70, "phy": 65},
+    "base_stats": {
+      "pac": 80,
+      "sho": 75,
+      "pas": 90,
+      "dri": 91,
+      "def": 70,
+      "phy": 65
+    },
     "overall": 87,
     "form": [
-      {"match_date": "2026-06-15", "opponent": "Real Madrid", "rating": 5.5},
-      {"match_date": "2026-06-08", "opponent": "Atletico", "rating": 6.0},
-      {"match_date": "2026-06-01", "opponent": "Sevilla", "rating": 5.8},
-      {"match_date": "2026-05-25", "opponent": "Valencia", "rating": 7.5},
-      {"match_date": "2026-05-18", "opponent": "Osasuna", "rating": 6.5}
+      {
+        "match_date": "2026-06-15",
+        "opponent": "Real Madrid",
+        "rating": 5.5,
+        "meme": "rough night against Real Madrid"
+      },
+      {
+        "match_date": "2026-06-08",
+        "opponent": "Atletico",
+        "rating": 6,
+        "meme": "where was he vs Atletico?"
+      },
+      {
+        "match_date": "2026-06-01",
+        "opponent": "Sevilla",
+        "rating": 5.8,
+        "meme": "nightmare vs Sevilla"
+      },
+      {
+        "match_date": "2026-05-25",
+        "opponent": "Valencia",
+        "rating": 7.5,
+        "meme": "solid, no fuss vs Valencia"
+      },
+      {
+        "match_date": "2026-05-18",
+        "opponent": "Osasuna",
+        "rating": 6.5,
+        "meme": "anonymous against Osasuna"
+      }
     ],
     "form_delta": -2,
-    "eff_stats": {"pac": 78, "sho": 73, "pas": 88, "dri": 89, "def": 68, "phy": 64},
+    "eff_stats": {
+      "pac": 78,
+      "sho": 73,
+      "pas": 88,
+      "dri": 89,
+      "def": 68,
+      "phy": 64
+    },
     "meme_tagline": "The spinner got spinned. Rough week for Pedri.",
     "rarity": "silver",
     "created_at": "2026-06-20T00:00:00Z"
@@ -226,17 +616,56 @@
     "nation": "Spain",
     "position": "ATK",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Lamine_Yamal_2024_%28cropped%29.jpg/800px-Lamine_Yamal_2024_%28cropped%29.jpg",
-    "base_stats": {"pac": 92, "sho": 79, "pas": 82, "dri": 91, "def": 30, "phy": 62},
+    "base_stats": {
+      "pac": 92,
+      "sho": 79,
+      "pas": 82,
+      "dri": 91,
+      "def": 30,
+      "phy": 62
+    },
     "overall": 85,
     "form": [
-      {"match_date": "2026-06-15", "opponent": "Real Madrid", "rating": 9.3},
-      {"match_date": "2026-06-08", "opponent": "Atletico", "rating": 8.8},
-      {"match_date": "2026-06-01", "opponent": "Sevilla", "rating": 8.5},
-      {"match_date": "2026-05-25", "opponent": "Valencia", "rating": 9.0},
-      {"match_date": "2026-05-18", "opponent": "Osasuna", "rating": 8.7}
+      {
+        "match_date": "2026-06-15",
+        "opponent": "Real Madrid",
+        "rating": 9.3,
+        "meme": "absolute cyborg mode vs Real Madrid"
+      },
+      {
+        "match_date": "2026-06-08",
+        "opponent": "Atletico",
+        "rating": 8.8,
+        "meme": "bullied Atletico for 90 mins"
+      },
+      {
+        "match_date": "2026-06-01",
+        "opponent": "Sevilla",
+        "rating": 8.5,
+        "meme": "Sevilla defenders still dizzy"
+      },
+      {
+        "match_date": "2026-05-25",
+        "opponent": "Valencia",
+        "rating": 9,
+        "meme": "unplayable against Valencia"
+      },
+      {
+        "match_date": "2026-05-18",
+        "opponent": "Osasuna",
+        "rating": 8.7,
+        "meme": "casual masterclass against Osasuna"
+      }
     ],
     "form_delta": 5,
-    "eff_stats": {"pac": 97, "sho": 83, "pas": 86, "dri": 96, "def": 32, "phy": 65},
+    "eff_stats": {
+      "pac": 97,
+      "sho": 83,
+      "pas": 86,
+      "dri": 96,
+      "def": 32,
+      "phy": 65
+    },
     "meme_tagline": "16 years old and terrorizing every defense. Criminal.",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
@@ -248,17 +677,56 @@
     "nation": "England",
     "position": "MID",
     "photo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Phil_Foden_2023_%28cropped%29.jpg/800px-Phil_Foden_2023_%28cropped%29.jpg",
-    "base_stats": {"pac": 83, "sho": 83, "pas": 85, "dri": 88, "def": 60, "phy": 68},
+    "base_stats": {
+      "pac": 83,
+      "sho": 83,
+      "pas": 85,
+      "dri": 88,
+      "def": 60,
+      "phy": 68
+    },
     "overall": 87,
     "form": [
-      {"match_date": "2026-06-13", "opponent": "Arsenal", "rating": 8.7},
-      {"match_date": "2026-06-06", "opponent": "Real Madrid", "rating": 8.0},
-      {"match_date": "2026-05-30", "opponent": "Newcastle", "rating": 7.5},
-      {"match_date": "2026-05-23", "opponent": "Liverpool", "rating": 8.3},
-      {"match_date": "2026-05-16", "opponent": "Brighton", "rating": 8.5}
+      {
+        "match_date": "2026-06-13",
+        "opponent": "Arsenal",
+        "rating": 8.7,
+        "meme": "casual masterclass against Arsenal"
+      },
+      {
+        "match_date": "2026-06-06",
+        "opponent": "Real Madrid",
+        "rating": 8,
+        "meme": "ran the show vs Real Madrid"
+      },
+      {
+        "match_date": "2026-05-30",
+        "opponent": "Newcastle",
+        "rating": 7.5,
+        "meme": "kept it ticking against Newcastle"
+      },
+      {
+        "match_date": "2026-05-23",
+        "opponent": "Liverpool",
+        "rating": 8.3,
+        "meme": "Liverpool defenders still dizzy"
+      },
+      {
+        "match_date": "2026-05-16",
+        "opponent": "Brighton",
+        "rating": 8.5,
+        "meme": "pulled the strings vs Brighton"
+      }
     ],
     "form_delta": 5,
-    "eff_stats": {"pac": 87, "sho": 87, "pas": 89, "dri": 92, "def": 63, "phy": 72},
+    "eff_stats": {
+      "pac": 87,
+      "sho": 87,
+      "pas": 89,
+      "dri": 92,
+      "def": 63,
+      "phy": 72
+    },
     "meme_tagline": "Foden in form is simply unfair. The Stockport Iniesta.",
     "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"

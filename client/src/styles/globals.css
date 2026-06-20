@@ -1,0 +1,32 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0e1a;
+  --bg2: #111827;
+  --bg3: #1f2937;
+  --text: #f0f4ff;
+  --text2: #9ca3af;
+  --accent: #3b82f6;
+  --gold: #c8a227;
+  --silver: #a8b2c0;
+  --bronze: #b87333;
+  --win: #22c55e;
+  --loss: #ef4444;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button { cursor: pointer; border: none; font-family: inherit; }
+input  { font-family: inherit; }

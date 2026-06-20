@@ -251,6 +251,40 @@
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.25);
 }
+/* ── Anakin credit line ── */
+.hero-anakin-credit {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--text2);
+    flex-wrap: wrap;
+}
+.hero-anakin-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--live);
+    box-shadow: 0 0 5px var(--live);
+    flex-shrink: 0;
+    animation: livePulse 1.4s ease-in-out infinite;
+}
+.hero-anakin-link {
+    color: var(--live);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(43, 245, 154, 0.35);
+    padding-bottom: 1px;
+    transition:
+        color 0.2s,
+        border-color 0.2s;
+}
+.hero-anakin-link:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
 .hero-card-float {
     animation: heroFloat 3.8s ease-in-out infinite;
     filter: drop-shadow(0 24px 60px rgba(43, 245, 154, 0.2))

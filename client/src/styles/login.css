@@ -1,0 +1,351 @@
+/* ============================================================
+   LOGIN SCREEN — CardClash
+   ============================================================ */
+
+.login-root {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px 48px;
+    overflow: hidden;
+    background: #020508;
+}
+
+/* ── stadium light + pitch-tint background ── */
+.login-root::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            ellipse 70% 55% at 50% -5%,
+            rgba(43, 245, 154, 0.11) 0%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 50% 40% at 80% 90%,
+            rgba(56, 189, 248, 0.07) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 40% 30% at 10% 70%,
+            rgba(160, 107, 255, 0.05) 0%,
+            transparent 55%
+        );
+    pointer-events: none;
+}
+
+/* ── pitch grid lines ── */
+.login-root::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.023) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.023) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+/* ── hero mark: big faded ⚽ behind card ── */
+.login-bg-ball {
+    position: absolute;
+    font-size: clamp(260px, 40vw, 420px);
+    line-height: 1;
+    opacity: 0.03;
+    user-select: none;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    filter: blur(2px);
+}
+
+/* ─────────────── LOGO ─────────────── */
+.login-logo-wrap {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.login-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(43, 245, 154, 0.08);
+    border: 1px solid rgba(43, 245, 154, 0.25);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-family: "Oswald", sans-serif;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: var(--live);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.login-badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--live);
+    box-shadow: 0 0 6px var(--live);
+    animation: loginPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes loginPulse {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+.login-wordmark {
+    font-family: "Anton", sans-serif !important;
+    font-size: clamp(52px, 10vw, 80px);
+    letter-spacing: 2px;
+    line-height: 0.9;
+    background: linear-gradient(
+        160deg,
+        #ffffff 0%,
+        #d4f5e9 45%,
+        var(--live) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 14px !important;
+    text-shadow: none;
+    position: relative;
+}
+
+.login-sub {
+    font-family: "Oswald", sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--text2);
+    text-transform: uppercase;
+}
+
+/* ─────────────── CARD ─────────────── */
+.login-card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 360px;
+    background: rgba(10, 16, 28, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    padding: 32px 28px 28px;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow:
+        0 0 0 1px rgba(43, 245, 154, 0.08) inset,
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(43, 245, 154, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* green top accent line */
+.login-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--live), transparent);
+    border-radius: 999px;
+}
+
+.login-card-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 2px;
+}
+
+.login-card-desc {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.55;
+    margin-bottom: 6px;
+}
+
+.login-card-desc strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* ─────────────── BUTTONS ─────────────── */
+.login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: none;
+    font-family: "Oswald", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        transform 0.15s,
+        box-shadow 0.15s,
+        filter 0.15s;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        transparent 60%
+    );
+    pointer-events: none;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+    filter: brightness(0.95);
+}
+
+.login-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.login-btn-metamask {
+    background: linear-gradient(135deg, #f6a623 0%, #e2761b 100%);
+    color: #1a0800;
+    box-shadow: 0 6px 24px rgba(246, 166, 35, 0.3);
+}
+
+.login-btn-phantom {
+    background: linear-gradient(135deg, #ab9ff2 0%, #7b5bf0 100%);
+    color: #0d0620;
+    box-shadow: 0 6px 24px rgba(123, 91, 240, 0.3);
+}
+
+.login-btn-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* ─────────────── DIVIDER ─────────────── */
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 2px 0;
+}
+
+.login-divider-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.login-divider-text {
+    font-family: "Oswald", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--text2);
+    text-transform: uppercase;
+}
+
+/* ─────────────── PREVIEW LINK ─────────────── */
+.login-preview-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+    color: var(--text2) !important;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-family: "Oswald", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    width: 100%;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        border-color 0.2s;
+}
+
+.login-preview-btn:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: var(--text) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* ─────────────── STATUS MESSAGES ─────────────── */
+.login-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.login-status-busy {
+    background: rgba(43, 245, 154, 0.06);
+    border: 1px solid rgba(43, 245, 154, 0.15);
+    color: var(--live);
+}
+
+.login-status-waiting {
+    background: rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    color: var(--accent);
+}
+
+.login-status-error {
+    background: rgba(255, 84, 112, 0.07);
+    border: 1px solid rgba(255, 84, 112, 0.2);
+    color: var(--loss);
+}
+
+/* ─────────────── FOOTER ─────────────── */
+.login-footer {
+    position: relative;
+    z-index: 2;
+    margin-top: 28px;
+    font-size: 11px;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.18);
+    text-transform: uppercase;
+}

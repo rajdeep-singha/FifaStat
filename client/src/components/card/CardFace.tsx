@@ -39,6 +39,7 @@ export const CardFace: React.FC<CardFaceProps> = ({
   const [shine, setShine] = useState(false);
   const [glow, setGlow] = useState(false);
   const [flipped, setFlipped] = useState(false);
+  const [imgError, setImgError] = useState(false);
   const stats = showEffStats ? card.eff_stats : card.base_stats;
 
   useEffect(() => {
@@ -70,14 +71,10 @@ export const CardFace: React.FC<CardFaceProps> = ({
         {/* ---------- FRONT ---------- */}
         <div className={frontCls} data-rarity={card.rarity}>
           <div className="card-photo">
-            {card.photo_url ? (
-              <img
-                src={card.photo_url}
-                alt={card.player_name}
-                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-              />
+            {card.photo_url && !imgError ? (
+              <img src={card.photo_url} alt={card.player_name} onError={() => setImgError(true)} />
             ) : (
-              <div className="card-photo-placeholder">⚽</div>
+              <div className="card-photo-placeholder">{card.position}</div>
             )}
           </div>
 

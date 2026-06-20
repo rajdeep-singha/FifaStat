@@ -13,7 +13,8 @@ import { ProfileBar } from './components/auth/ProfileBar';
 function App() {
   const { game, demoCards, fetchDemoCards } = useStore();
   const { isLoggedIn } = useAuth();
-  const [showcase, setShowcase] = useState(false);
+  // ?pack deep-links straight into the pack opening (handy for demos/sharing).
+  const [showcase, setShowcase] = useState(() => new URLSearchParams(location.search).has('pack'));
   const [editingName, setEditingName] = useState(false);
 
   useEffect(() => { fetchDemoCards(); }, []);

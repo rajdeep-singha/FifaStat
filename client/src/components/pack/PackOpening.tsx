@@ -32,6 +32,12 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
 
   useEffect(() => () => timers.current.forEach(clearTimeout), []);
 
+  // ?pack=auto opens immediately (used for demo deep-links / screenshots)
+  useEffect(() => {
+    if (new URLSearchParams(location.search).get('pack') === 'auto') open();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const open = () => {
     setPhase('charging');
     // scrape ticker

@@ -2,6 +2,13 @@ import { useAuth } from '../../web3/useAuth';
 
 const short = (a: string) => `${a.slice(0, 6)}…${a.slice(-4)}`;
 
+const walletBtn = (accent: string): React.CSSProperties => ({
+  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
+  padding: '14px 24px', borderRadius: 12, fontFamily: "'Oswald', sans-serif",
+  fontSize: 15, fontWeight: 700, letterSpacing: 1, color: '#04130b',
+  background: accent,
+});
+
 export const LoginScreen: React.FC<{ onPreview?: () => void }> = ({ onPreview }) => {
   const { isLoggedIn, login, busy, error, id } = useAuth();
 
@@ -13,43 +20,40 @@ export const LoginScreen: React.FC<{ onPreview?: () => void }> = ({ onPreview })
       justifyContent: 'center', minHeight: '90vh', padding: 20, gap: 28,
     }}>
       <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: 64, marginBottom: 8 }}>⚽</div>
-        <h1 style={{
-          fontSize: 48, fontWeight: 900,
-          background: 'linear-gradient(135deg, #c8a227, #ffd700)',
+        <h1 className="display" style={{
+          fontSize: 64,
+          background: 'linear-gradient(135deg,#fff,var(--live))',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-          letterSpacing: -1,
-        }}>CardClash</h1>
-        <p style={{ color: 'var(--text2)', fontSize: 16, marginTop: 8 }}>
-          Football cards. Live data. Real stakes.
-        </p>
+        }}>CARDCLASH</h1>
+        <p style={{
+          color: 'var(--live)', fontSize: 13, marginTop: 4,
+          fontFamily: "'Oswald', sans-serif", letterSpacing: 4, textTransform: 'uppercase',
+        }}>World Cup 2026 · real players · real stakes</p>
       </div>
 
       <div style={{
-        background: 'var(--bg2)', border: '1px solid var(--bg3)',
-        borderRadius: 16, padding: 32, width: 320, textAlign: 'center',
-        display: 'flex', flexDirection: 'column', gap: 16,
+        background: 'var(--panel)', border: '1px solid var(--line)',
+        borderRadius: 16, padding: 32, width: 330, textAlign: 'center',
+        display: 'flex', flexDirection: 'column', gap: 14,
       }}>
-        <h3 style={{ color: 'var(--live)' }}>plug in your wallet</h3>
+        <h3 style={{ color: 'var(--live)', fontFamily: "'Oswald',sans-serif", letterSpacing: 1 }}>plug in your wallet</h3>
         <p style={{ color: 'var(--text2)', fontSize: 13, lineHeight: 1.5 }}>
-          your wallet = your whole identity, no cap. no signup, no password, no server,
-          <strong> zero test ETH</strong>. just connect + sign and you're in — signing is free fr.
+          your wallet = your whole identity, no cap. no signup, no password, <strong>zero gas</strong>.
+          connect, sign, ball out.
         </p>
-        <button
-          onClick={login}
-          disabled={busy}
-          style={{
-            background: 'linear-gradient(135deg, #c8a227, #ffd700)',
-            color: '#000', padding: '14px 24px', borderRadius: 10,
-            fontSize: 16, fontWeight: 800, opacity: busy ? 0.7 : 1,
-          }}
-        >
-          {busy ? 'Check your wallet…' : '🦊 Connect Wallet'}
+
+        <button onClick={() => login('metaMask')} disabled={busy} style={walletBtn('linear-gradient(135deg,#f6a623,#e2761b)')}>
+          MetaMask
         </button>
+        <button onClick={() => login('phantom')} disabled={busy} style={walletBtn('linear-gradient(135deg,#ab9ff2,#7b5bf0)')}>
+          Phantom
+        </button>
+
+        {busy && <div style={{ fontSize: 12, color: 'var(--text2)' }}>check your wallet…</div>}
         {id && !isLoggedIn && (
           <div style={{ fontSize: 12, color: 'var(--text2)' }}>spotted {short(id)} — sign to lock in</div>
         )}
-        {error && <div style={{ color: '#ef4444', fontSize: 12 }}>{error}</div>}
+        {error && <div style={{ color: 'var(--loss)', fontSize: 12 }}>{error}</div>}
         {onPreview && (
           <button
             onClick={onPreview}
@@ -59,12 +63,9 @@ export const LoginScreen: React.FC<{ onPreview?: () => void }> = ({ onPreview })
               fontFamily: "'Oswald', sans-serif", fontWeight: 600, letterSpacing: 1, fontSize: 13,
             }}
           >
-            ⚡ rip a pack first — no wallet needed
+            rip a pack first — no wallet needed
           </button>
         )}
-        <span style={{ fontSize: 11, color: 'var(--text2)' }}>
-          connect, sign, ball out. it's free, no gas no stress.
-        </span>
       </div>
     </div>
   );

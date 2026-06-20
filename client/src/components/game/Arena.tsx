@@ -21,9 +21,8 @@ export const Arena: React.FC = () => {
         display: 'flex', flexDirection: 'column', alignItems: 'center',
         justifyContent: 'center', minHeight: '100vh', gap: 24, padding: 20,
       }}>
-        <div style={{ fontSize: 80 }}>{iWon ? '🏆' : '💀'}</div>
-        <h2 style={{ fontSize: 36, fontWeight: 900, color: iWon ? 'var(--win)' : '#ef4444' }}>
-          {winnerSlot === 0 ? 'DRAW!' : iWon ? 'VICTORY!' : 'DEFEAT!'}
+        <h2 className="display" style={{ fontSize: 72, color: iWon ? 'var(--win)' : 'var(--loss)' }}>
+          {winnerSlot === 0 ? 'DRAW' : iWon ? 'VICTORY' : 'DEFEAT'}
         </h2>
         <div style={{ fontSize: 20, color: 'var(--text2)' }}>
           Final: {myScore} – {oppScore}
@@ -60,7 +59,7 @@ export const Arena: React.FC = () => {
           </span>
         </div>
         <div style={{ fontSize: 14, color: 'var(--text2)' }}>
-          {status === 'waiting_choice' ? '⏳ Waiting...' : status === 'choosing' ? '🃏 Your turn' : ''}
+          {status === 'waiting_choice' ? 'waiting…' : status === 'choosing' ? 'your turn' : ''}
         </div>
       </div>
 

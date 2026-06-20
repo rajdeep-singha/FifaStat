@@ -35,12 +35,13 @@ export function useAuth() {
   const isLoggedIn =
     isConnected && !!session && session.address.toLowerCase() === address?.toLowerCase();
 
-  const login = useCallback(async () => {
+  const login = useCallback(async (target?: 'metaMask' | 'phantom') => {
     setError(null);
     try {
       let acct = address;
       if (!isConnected) {
-        const res = await connectAsync({ connector: injected() });
+        const connector = injected(target ? { target } : undefined);
+        const res = await connectAsync({ connector });
         acct = res.accounts[0];
       }
       if (!acct) throw new Error('No wallet account found');

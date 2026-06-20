@@ -14,14 +14,14 @@ export const ProfileBar: React.FC = () => {
       borderBottom: '1px solid var(--line)', fontSize: 13,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <span style={{ fontSize: 18 }}>⚽</span>
-        <strong style={{ color: 'var(--live)', fontFamily: "'Oswald', sans-serif", letterSpacing: 0.5 }} title={id}>
+        <strong className="display" style={{ color: 'var(--live)', fontSize: 18, letterSpacing: 1 }}>CC</strong>
+        <strong style={{ color: 'var(--text)', fontFamily: "'Oswald', sans-serif", letterSpacing: 0.5 }} title={id}>
           {short(id)}
         </strong>
         <span style={{ color: 'var(--text2)', fontSize: 11 }}>that's you fr</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        {onWrongNetwork && <span style={{ color: '#f59e0b', fontSize: 11 }}>⚠ switch to Sepolia</span>}
+        {onWrongNetwork && <span style={{ color: '#f59e0b', fontSize: 11 }}>switch to Sepolia</span>}
         <button
           onClick={logout}
           style={{

@@ -7,7 +7,7 @@ import { injected } from 'wagmi/connectors';
 // + sign, "logout" = disconnect. Address is the player's permanent id.
 export const wagmiConfig = createConfig({
   chains: [sepolia],
-  connectors: [injected()],
+  connectors: [injected({ target: 'metaMask' }), injected({ target: 'phantom' })],
   transports: {
     // Public Sepolia RPC. Override with VITE_SEPOLIA_RPC_URL for reliability.
     [sepolia.id]: http(import.meta.env.VITE_SEPOLIA_RPC_URL ?? 'https://rpc.sepolia.org'),

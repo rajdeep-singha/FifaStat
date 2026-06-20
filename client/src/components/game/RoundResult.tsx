@@ -31,9 +31,6 @@ export const RoundResult: React.FC<Props> = ({ result, playerSlot, onContinue })
         border: `3px solid ${isDraw ? 'var(--text2)' : iWon ? 'var(--win)' : '#ef4444'}`,
         borderRadius: 20, padding: '32px 48px', textAlign: 'center', maxWidth: 360,
       }}>
-        <div style={{ fontSize: 56, marginBottom: 8 }}>
-          {isDraw ? '🤝' : iWon ? '🏆' : '💀'}
-        </div>
         <div style={{
           fontSize: 32, fontWeight: 900,
           color: isDraw ? 'var(--text2)' : iWon ? 'var(--win)' : '#ef4444',
@@ -66,7 +63,7 @@ export const RoundResult: React.FC<Props> = ({ result, playerSlot, onContinue })
             color: 'white', padding: '6px 16px', borderRadius: 99,
             fontSize: 12, fontWeight: 800,
           }}>
-            ⚡ COUNTER BONUS ×1.2
+            COUNTER BONUS ×1.2
           </div>
         )}
       </div>

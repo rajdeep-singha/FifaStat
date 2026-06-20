@@ -110,7 +110,7 @@ export const CardFace: React.FC<CardFaceProps> = ({
               {card.form_delta > 0 ? (
                 <span className="form-pill hot"><span className="live-dot" />FORM +{card.form_delta}</span>
               ) : card.form_delta < 0 ? (
-                <span className="form-pill cold">❄ {card.form_delta}</span>
+                <span className="form-pill cold">FORM {card.form_delta}</span>
               ) : null}
             </div>
           </div>
@@ -136,7 +136,7 @@ export const CardFace: React.FC<CardFaceProps> = ({
                   <span>vs {g.opponent}</span>
                   <span className="date">{(g as { stage?: string }).stage ?? g.match_date.slice(5)}</span>
                 </div>
-                <div className="game-meme">“{g.meme || card.meme_tagline}”</div>
+                {g.meme ? <div className="game-meme">“{g.meme}”</div> : <div className="game-meme muted">no buzz yet</div>}
               </div>
             ))}
           </div>

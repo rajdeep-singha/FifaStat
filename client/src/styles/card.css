@@ -237,6 +237,7 @@
   font-size: 0.98em; font-style: italic; color: var(--social);
   line-height: 1.15; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
+.game-meme.muted { color: var(--text2); opacity: 0.6; }
 .back-foot {
   margin-top: 0.6em; padding-top: 0.6em; border-top: 1px solid var(--line);
   display: flex; align-items: center; justify-content: space-between;

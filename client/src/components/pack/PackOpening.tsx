@@ -59,8 +59,8 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
   const bestIdx = pack.length - 1;
   const done = revealed >= pack.length;
 
-  // once fully revealed, the pack lands in your collection
-  useEffect(() => { if (done && pack.length) addOwned(pack); }, [done, pack, addOwned]);
+  // You keep ONE card out of the five.
+  const keep = (card: Card) => { addOwned([card]); onClose(); };
   const topRarity = pack[bestIdx]?.rarity ?? 'bronze';
 
   return (
@@ -71,9 +71,9 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
       {phase === 'closed' && (
         <div className="pack-closed">
           <div className="pack-box pack-float" onClick={open}>
-            <div className="pack-crest">⚽</div>
+            <div className="pack-crest">CC</div>
             <div className="pack-word">CARDCLASH</div>
-            <div className="pack-tier">🏆 WORLD CUP 2026 · FORM XI</div>
+            <div className="pack-tier">WORLD CUP 2026 · FORM XI</div>
           </div>
           <button className="pack-open-btn" onClick={open}>OPEN PACK</button>
           <p style={{ color: 'var(--text2)', fontSize: 13 }}>5 living cards · scraped fresh · lowkey heat</p>
@@ -83,7 +83,7 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
       {phase === 'charging' && (
         <div className="pack-closed">
           <div className="pack-box pack-float pack-charge">
-            <div className="pack-crest">⚽</div>
+            <div className="pack-crest">CC</div>
             <div className="pack-word">CARDCLASH</div>
           </div>
           <div className="pack-scrape">
@@ -96,8 +96,8 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
       {phase === 'revealing' && (
         <>
           <div className="pack-head fade-in">
-            <h2>{done ? 'YOUR PACK' : 'COOKING…'}</h2>
-            <p>{done ? 'tap ↻ on any card for its last 5 games + memes' : 'goat lands last'}</p>
+            <h2>{done ? 'PICK YOUR CARD' : 'COOKING'}</h2>
+            <p>{done ? 'tap a card to keep it — only one is yours' : 'goat lands last'}</p>
           </div>
           <div className="pack-stage">
             {pack.map((card, i) => {
@@ -105,7 +105,7 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
               const isBest = i === bestIdx;
               const justRevealed = i === revealed - 1;
               return (
-                <div key={card.id} className={`pack-slot ${isBest ? 'is-best' : ''}`}>
+                <div key={card.id} className={`pack-slot ${isBest ? 'is-best' : ''} ${done ? 'pickable' : ''}`}>
                   {isOpen ? (
                     <div className={isBest ? 'walkout' : 'rise'}>
                       {isBest && justRevealed && topRarity === 'gold' && (
@@ -115,6 +115,7 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
                         card={card}
                         size={isBest ? 'large' : 'hand'}
                         isRevealing={justRevealed}
+                        onClick={done ? () => keep(card) : undefined}
                       />
                     </div>
                   ) : (

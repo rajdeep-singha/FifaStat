@@ -6,6 +6,7 @@ import { LobbyScreen } from './components/lobby/LobbyScreen';
 import { Arena } from './components/game/Arena';
 import { PackOpening } from './components/pack/PackOpening';
 import { HomeScreen } from './components/home/HomeScreen';
+import { CreateTeam } from './components/team/CreateTeam';
 import { useAuth } from './web3/useAuth';
 import { LoginScreen } from './components/auth/LoginScreen';
 import { ProfileBar } from './components/auth/ProfileBar';
@@ -14,7 +15,7 @@ function App() {
   const { game, demoCards, fetchDemoCards } = useStore();
   const { isLoggedIn } = useAuth();
   const [showcase, setShowcase] = useState(() => new URLSearchParams(location.search).has('pack'));
-  const [view, setView] = useState<'home' | 'play'>('home');
+  const [view, setView] = useState<'home' | 'play' | 'team'>('home');
 
   useEffect(() => { fetchDemoCards(); }, []);
 
@@ -24,7 +25,8 @@ function App() {
     return <PackOpening cards={demoCards} onClose={() => setShowcase(false)} />;
   }
 
-  if (!isLoggedIn) return <LoginScreen onPreview={() => setShowcase(true)} />;
+  const devForce = new URLSearchParams(location.search).has('dev');
+  if (!isLoggedIn && !devForce) return <LoginScreen onPreview={() => setShowcase(true)} />;
 
   const isInGame = ['dealing', 'choosing', 'waiting_choice', 'resolving', 'finished'].includes(game.status);
   if (isInGame) return <Arena />;
@@ -33,7 +35,13 @@ function App() {
     <div style={{ minHeight: '100vh' }}>
       <ProfileBar />
       {view === 'home' ? (
-        <HomeScreen onOpenPack={() => setShowcase(true)} onPlay={() => setView('play')} />
+        <HomeScreen
+          onOpenPack={() => setShowcase(true)}
+          onPlay={() => setView('play')}
+          onBuildTeam={() => setView('team')}
+        />
+      ) : view === 'team' ? (
+        <CreateTeam onDone={() => setView('home')} />
       ) : (
         <div>
           <button

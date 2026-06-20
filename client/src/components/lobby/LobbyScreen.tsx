@@ -31,7 +31,6 @@ export const LobbyScreen: React.FC<{ onOpenPack?: () => void }> = ({ onOpenPack 
     const ready = game.status === 'waiting_opponent';
     return (
       <div style={{ textAlign: 'center', padding: '70px 20px' }}>
-        <div style={{ fontSize: 40, marginBottom: 8 }}>⚽</div>
         <h2 className="display" style={{ fontSize: 26, marginBottom: 20 }}>ROOM READY</h2>
         <div style={{
           fontFamily: "'Anton', sans-serif", fontSize: 44, letterSpacing: 10,
@@ -72,7 +71,7 @@ export const LobbyScreen: React.FC<{ onOpenPack?: () => void }> = ({ onOpenPack 
           color: 'var(--live)', fontSize: 13, marginTop: 6,
           fontFamily: "'Oswald', sans-serif", letterSpacing: 4, textTransform: 'uppercase',
         }}>
-          🏆 World Cup 2026 · live form · no cap
+          World Cup 2026 · live form · no cap
         </p>
       </div>
 
@@ -135,7 +134,7 @@ export const LobbyScreen: React.FC<{ onOpenPack?: () => void }> = ({ onOpenPack 
             fontFamily: "'Oswald', sans-serif", fontWeight: 600, letterSpacing: 1.5, fontSize: 13,
           }}
         >
-          ⚡ OPEN A PACK
+          OPEN A PACK
         </button>
       )}
     </div>

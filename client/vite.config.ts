@@ -7,7 +7,7 @@ import { buildLiveSquad } from './anakin-feed'
 // browser). Results are cached so we don't re-scrape on every reload.
 function liveFeed(key: string): Plugin {
   let cache: { at: number; data: unknown } | null = null
-  const TTL = 5 * 60 * 1000 // 5 min
+  const TTL = 30 * 60 * 1000 // 30 min — searches cost credits, so cache hard
 
   return {
     name: 'cardclash-live-feed',

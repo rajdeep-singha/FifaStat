@@ -30,10 +30,10 @@ export const LoginScreen: React.FC<{ onPreview?: () => void }> = ({ onPreview })
         borderRadius: 16, padding: 32, width: 320, textAlign: 'center',
         display: 'flex', flexDirection: 'column', gap: 16,
       }}>
-        <h3 style={{ color: 'var(--gold)' }}>Sign in with your wallet</h3>
+        <h3 style={{ color: 'var(--live)' }}>plug in your wallet</h3>
         <p style={{ color: 'var(--text2)', fontSize: 13, lineHeight: 1.5 }}>
-          Your wallet address is your CardClash ID — no signup, no password, no server,
-          and <strong>no test ETH needed</strong>. Just connect and sign — signing is free.
+          your wallet = your whole identity, no cap. no signup, no password, no server,
+          <strong> zero test ETH</strong>. just connect + sign and you're in — signing is free fr.
         </p>
         <button
           onClick={login}
@@ -47,7 +47,7 @@ export const LoginScreen: React.FC<{ onPreview?: () => void }> = ({ onPreview })
           {busy ? 'Check your wallet…' : '🦊 Connect Wallet'}
         </button>
         {id && !isLoggedIn && (
-          <div style={{ fontSize: 12, color: 'var(--text2)' }}>Detected {short(id)} — sign to continue</div>
+          <div style={{ fontSize: 12, color: 'var(--text2)' }}>spotted {short(id)} — sign to lock in</div>
         )}
         {error && <div style={{ color: '#ef4444', fontSize: 12 }}>{error}</div>}
         {onPreview && (
@@ -59,11 +59,11 @@ export const LoginScreen: React.FC<{ onPreview?: () => void }> = ({ onPreview })
               fontFamily: "'Oswald', sans-serif", fontWeight: 600, letterSpacing: 1, fontSize: 13,
             }}
           >
-            ⚡ Open a pack first — no wallet needed
+            ⚡ rip a pack first — no wallet needed
           </button>
         )}
         <span style={{ fontSize: 11, color: 'var(--text2)' }}>
-          Test ETH is only needed later if you want to claim an on-chain username.
+          connect, sign, ball out. it's free, no gas no stress.
         </span>
       </div>
     </div>

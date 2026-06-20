@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { type Card, type GameState, type GameStatus, type StatKey, type RoundResult } from '../types';
 import demoPack from '../data/demo_pack.json';
+import { loadSquad } from '../data/liveFeed';
 import { peerNet } from '../net/peer';
 
 interface Store {
@@ -64,9 +65,11 @@ export const useStore = create<Store>((set, get) => {
     isLoadingDemo: false,
     error: null,
 
-    // No backend: the demo pack ships with the client.
+    // Loads the World Cup squad (live feed if VITE_LIVE_FEED_URL is set, else bundled).
     fetchDemoCards: async () => {
-      set({ demoCards: demoPack as Card[], isLoadingDemo: false });
+      set({ isLoadingDemo: true });
+      const cards = await loadSquad();
+      set({ demoCards: cards, isLoadingDemo: false });
     },
 
     game: initialGame,

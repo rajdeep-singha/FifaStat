@@ -18,33 +18,38 @@
     "form": [
       {
         "match_date": "2026-06-15",
-        "opponent": "Bayern Munich",
+        "opponent": "Brazil",
         "rating": 9.2,
-        "meme": "absolute cyborg mode vs Bayern Munich"
+        "meme": "he is HIM at this World Cup, Brazil cooked",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-08",
-        "opponent": "Atletico Madrid",
+        "opponent": "England",
         "rating": 8.7,
-        "meme": "bullied Atletico Madrid for 90 mins"
+        "meme": "different breed vs England",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-06-01",
-        "opponent": "Sevilla",
+        "opponent": "Portugal",
         "rating": 7.8,
-        "meme": "did his job against Sevilla"
+        "meme": "quietly cooked Portugal",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-25",
-        "opponent": "Valencia",
+        "opponent": "Morocco",
         "rating": 9,
-        "meme": "unplayable against Valencia"
+        "meme": "Morocco got bodied, sigma tournament",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-18",
-        "opponent": "Villarreal",
+        "opponent": "Mexico",
         "rating": 8.5,
-        "meme": "casual masterclass against Villarreal"
+        "meme": "Mexico got cooked ngl",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 5,
@@ -79,33 +84,38 @@
     "form": [
       {
         "match_date": "2026-06-14",
-        "opponent": "Arsenal",
+        "opponent": "Germany",
         "rating": 9.5,
-        "meme": "carried the whole squad past Arsenal"
+        "meme": "GOATED, Germany caught lacking",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-07",
-        "opponent": "Man City",
+        "opponent": "Croatia",
         "rating": 8.2,
-        "meme": "ran the show vs Man City"
+        "meme": "bro ran the WC group vs Croatia",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-05-31",
-        "opponent": "Chelsea",
+        "opponent": "USA",
         "rating": 7.5,
-        "meme": "kept it ticking against Chelsea"
+        "meme": "did the dash on USA",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-24",
-        "opponent": "Tottenham",
+        "opponent": "Belgium",
         "rating": 8.8,
-        "meme": "Tottenham defenders still dizzy"
+        "meme": "lowkey carried vs Belgium",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-17",
-        "opponent": "Everton",
+        "opponent": "Argentina",
         "rating": 9.1,
-        "meme": "unplayable against Everton"
+        "meme": "Argentina got bodied, sigma tournament",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 5,
@@ -140,33 +150,38 @@
     "form": [
       {
         "match_date": "2026-06-13",
-        "opponent": "Arsenal",
+        "opponent": "Japan",
         "rating": 9.8,
-        "meme": "unplayable against Arsenal"
+        "meme": "Japan got bodied, sigma tournament",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-06",
-        "opponent": "Real Madrid",
+        "opponent": "Uruguay",
         "rating": 9.5,
-        "meme": "carried the whole squad past Real Madrid"
+        "meme": "GOATED, Uruguay caught lacking",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-05-30",
-        "opponent": "Newcastle",
+        "opponent": "Brazil",
         "rating": 8,
-        "meme": "ran the show vs Newcastle"
+        "meme": "bro ran the WC group vs Brazil",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-23",
-        "opponent": "Liverpool",
+        "opponent": "England",
         "rating": 7.2,
-        "meme": "kept it ticking against Liverpool"
+        "meme": "kept it a buck vs England",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-16",
-        "opponent": "Brighton",
+        "opponent": "Portugal",
         "rating": 8.9,
-        "meme": "Brighton defenders still dizzy"
+        "meme": "lowkey carried vs Portugal",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 5,
@@ -201,33 +216,38 @@
     "form": [
       {
         "match_date": "2026-06-15",
-        "opponent": "Bayern Munich",
+        "opponent": "Senegal",
         "rating": 8.8,
-        "meme": "Bayern Munich defenders still dizzy"
+        "meme": "lowkey carried vs Senegal",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-08",
-        "opponent": "Atletico",
+        "opponent": "France",
         "rating": 7.5,
-        "meme": "steady hand vs Atletico"
+        "meme": "solid shift vs France",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-06-01",
-        "opponent": "Sevilla",
+        "opponent": "Germany",
         "rating": 6,
-        "meme": "Sevilla had his number today"
+        "meme": "Germany had him pressed",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-25",
-        "opponent": "Valencia",
+        "opponent": "Croatia",
         "rating": 7.2,
-        "meme": "quietly bossed it vs Valencia"
+        "meme": "quietly cooked Croatia",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-18",
-        "opponent": "Villarreal",
+        "opponent": "USA",
         "rating": 8,
-        "meme": "bullied Villarreal for 90 mins"
+        "meme": "different breed vs USA",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 2,
@@ -262,33 +282,38 @@
     "form": [
       {
         "match_date": "2026-06-15",
-        "opponent": "Bayern Munich",
+        "opponent": "Spain",
         "rating": 9.1,
-        "meme": "send the Ballon dOr already, Bayern Munich were helpless"
+        "meme": "carried the nation past Spain no cap",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-08",
-        "opponent": "Atletico",
+        "opponent": "Netherlands",
         "rating": 8.5,
-        "meme": "Atletico defenders still dizzy"
+        "meme": "lowkey carried vs Netherlands",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-06-01",
-        "opponent": "Sevilla",
+        "opponent": "Japan",
         "rating": 8,
-        "meme": "pulled the strings vs Sevilla"
+        "meme": "clean W over Japan",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-25",
-        "opponent": "Valencia",
+        "opponent": "Uruguay",
         "rating": 7.8,
-        "meme": "solid, no fuss vs Valencia"
+        "meme": "did the dash on Uruguay",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-18",
-        "opponent": "Villarreal",
+        "opponent": "Brazil",
         "rating": 8.3,
-        "meme": "ran the show vs Villarreal"
+        "meme": "bro ran the WC group vs Brazil",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 5,
@@ -323,33 +348,38 @@
     "form": [
       {
         "match_date": "2026-06-13",
-        "opponent": "Arsenal",
+        "opponent": "Morocco",
         "rating": 8.5,
-        "meme": "ran the show vs Arsenal"
+        "meme": "bro ran the WC group vs Morocco",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-06",
-        "opponent": "Real Madrid",
+        "opponent": "Mexico",
         "rating": 7.9,
-        "meme": "kept it ticking against Real Madrid"
+        "meme": "quietly cooked Mexico",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-05-30",
-        "opponent": "Newcastle",
+        "opponent": "Senegal",
         "rating": 8.2,
-        "meme": "Newcastle defenders still dizzy"
+        "meme": "lowkey carried vs Senegal",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-23",
-        "opponent": "Liverpool",
+        "opponent": "France",
         "rating": 8,
-        "meme": "pulled the strings vs Liverpool"
+        "meme": "clean W over France",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-16",
-        "opponent": "Brighton",
+        "opponent": "Germany",
         "rating": 8.4,
-        "meme": "casual masterclass against Brighton"
+        "meme": "Germany got cooked ngl",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 5,
@@ -384,33 +414,38 @@
     "form": [
       {
         "match_date": "2026-06-13",
-        "opponent": "Arsenal",
+        "opponent": "Senegal",
         "rating": 7.5,
-        "meme": "solid, no fuss vs Arsenal"
+        "meme": "quietly cooked Senegal",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-06",
-        "opponent": "Real Madrid",
+        "opponent": "Argentina",
         "rating": 6.8,
-        "meme": "anonymous against Real Madrid"
+        "meme": "NPC energy vs Argentina",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-05-30",
-        "opponent": "Newcastle",
+        "opponent": "Spain",
         "rating": 7,
-        "meme": "kept it ticking against Newcastle"
+        "meme": "solid shift vs Spain",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-23",
-        "opponent": "Liverpool",
+        "opponent": "Netherlands",
         "rating": 6.5,
-        "meme": "where was he vs Liverpool?"
+        "meme": "Netherlands had him pressed",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-16",
-        "opponent": "Brighton",
+        "opponent": "Japan",
         "rating": 7.2,
-        "meme": "steady hand vs Brighton"
+        "meme": "quietly cooked Japan",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 0,
@@ -445,33 +480,38 @@
     "form": [
       {
         "match_date": "2026-06-14",
-        "opponent": "Arsenal",
+        "opponent": "England",
         "rating": 8.8,
-        "meme": "pulled the strings vs Arsenal"
+        "meme": "clean W over England",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-07",
-        "opponent": "Man City",
+        "opponent": "Portugal",
         "rating": 9,
-        "meme": "carried the whole squad past Man City"
+        "meme": "GOATED, Portugal caught lacking",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-05-31",
-        "opponent": "Chelsea",
+        "opponent": "Morocco",
         "rating": 8.5,
-        "meme": "ran the show vs Chelsea"
+        "meme": "bro ran the WC group vs Morocco",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-24",
-        "opponent": "Tottenham",
+        "opponent": "Mexico",
         "rating": 8.2,
-        "meme": "bullied Tottenham for 90 mins"
+        "meme": "different breed vs Mexico",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-17",
-        "opponent": "Everton",
+        "opponent": "Senegal",
         "rating": 9.1,
-        "meme": "Everton couldnt even foul him"
+        "meme": "golden boot loading vs Senegal",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 5,
@@ -506,33 +546,38 @@
     "form": [
       {
         "match_date": "2026-06-14",
-        "opponent": "Liverpool",
+        "opponent": "Croatia",
         "rating": 8,
-        "meme": "Liverpool defenders still dizzy"
+        "meme": "lowkey carried vs Croatia",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-07",
-        "opponent": "Man City",
+        "opponent": "USA",
         "rating": 6.5,
-        "meme": "off the boil against Man City"
+        "meme": "USA had him pressed",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-05-31",
-        "opponent": "Chelsea",
+        "opponent": "Belgium",
         "rating": 7.5,
-        "meme": "solid, no fuss vs Chelsea"
+        "meme": "quietly cooked Belgium",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-24",
-        "opponent": "Tottenham",
+        "opponent": "Argentina",
         "rating": 8.5,
-        "meme": "ran the show vs Tottenham"
+        "meme": "bro ran the WC group vs Argentina",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-17",
-        "opponent": "Wolves",
+        "opponent": "Spain",
         "rating": 7.8,
-        "meme": "kept it ticking against Wolves"
+        "meme": "solid shift vs Spain",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 2,
@@ -567,33 +612,38 @@
     "form": [
       {
         "match_date": "2026-06-15",
-        "opponent": "Real Madrid",
+        "opponent": "Uruguay",
         "rating": 5.5,
-        "meme": "rough night against Real Madrid"
+        "meme": "ratioed by Uruguay fr",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-08",
-        "opponent": "Atletico",
+        "opponent": "Brazil",
         "rating": 6,
-        "meme": "where was he vs Atletico?"
+        "meme": "kinda invisible vs Brazil",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-06-01",
-        "opponent": "Sevilla",
+        "opponent": "England",
         "rating": 5.8,
-        "meme": "nightmare vs Sevilla"
+        "meme": "down bad after England",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-25",
-        "opponent": "Valencia",
+        "opponent": "Portugal",
         "rating": 7.5,
-        "meme": "solid, no fuss vs Valencia"
+        "meme": "solid shift vs Portugal",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-18",
-        "opponent": "Osasuna",
+        "opponent": "Morocco",
         "rating": 6.5,
-        "meme": "anonymous against Osasuna"
+        "meme": "Morocco had him pressed",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": -2,
@@ -628,33 +678,38 @@
     "form": [
       {
         "match_date": "2026-06-15",
-        "opponent": "Real Madrid",
+        "opponent": "France",
         "rating": 9.3,
-        "meme": "absolute cyborg mode vs Real Madrid"
+        "meme": "he is HIM at this World Cup, France cooked",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-08",
-        "opponent": "Atletico",
+        "opponent": "Germany",
         "rating": 8.8,
-        "meme": "bullied Atletico for 90 mins"
+        "meme": "different breed vs Germany",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-06-01",
-        "opponent": "Sevilla",
+        "opponent": "Croatia",
         "rating": 8.5,
-        "meme": "Sevilla defenders still dizzy"
+        "meme": "lowkey carried vs Croatia",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-25",
-        "opponent": "Valencia",
+        "opponent": "USA",
         "rating": 9,
-        "meme": "unplayable against Valencia"
+        "meme": "USA got bodied, sigma tournament",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-18",
-        "opponent": "Osasuna",
+        "opponent": "Belgium",
         "rating": 8.7,
-        "meme": "casual masterclass against Osasuna"
+        "meme": "Belgium got cooked ngl",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 5,
@@ -689,33 +744,38 @@
     "form": [
       {
         "match_date": "2026-06-13",
-        "opponent": "Arsenal",
+        "opponent": "Netherlands",
         "rating": 8.7,
-        "meme": "casual masterclass against Arsenal"
+        "meme": "Netherlands got cooked ngl",
+        "stage": "Group A"
       },
       {
         "match_date": "2026-06-06",
-        "opponent": "Real Madrid",
+        "opponent": "Japan",
         "rating": 8,
-        "meme": "ran the show vs Real Madrid"
+        "meme": "bro ran the WC group vs Japan",
+        "stage": "Group B"
       },
       {
         "match_date": "2026-05-30",
-        "opponent": "Newcastle",
+        "opponent": "Uruguay",
         "rating": 7.5,
-        "meme": "kept it ticking against Newcastle"
+        "meme": "kept it a buck vs Uruguay",
+        "stage": "Group C"
       },
       {
         "match_date": "2026-05-23",
-        "opponent": "Liverpool",
+        "opponent": "Brazil",
         "rating": 8.3,
-        "meme": "Liverpool defenders still dizzy"
+        "meme": "lowkey carried vs Brazil",
+        "stage": "R16"
       },
       {
         "match_date": "2026-05-16",
-        "opponent": "Brighton",
+        "opponent": "Spain",
         "rating": 8.5,
-        "meme": "pulled the strings vs Brighton"
+        "meme": "clean W over Spain",
+        "stage": "Quarter-Final"
       }
     ],
     "form_delta": 5,

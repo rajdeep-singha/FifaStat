@@ -69,10 +69,10 @@ export const LobbyScreen: React.FC<{ onOpenPack?: () => void }> = ({ onOpenPack 
           CARDCLASH
         </h1>
         <p style={{
-          color: 'var(--text2)', fontSize: 14, marginTop: 6,
-          fontFamily: "'Oswald', sans-serif", letterSpacing: 3, textTransform: 'uppercase',
+          color: 'var(--live)', fontSize: 13, marginTop: 6,
+          fontFamily: "'Oswald', sans-serif", letterSpacing: 4, textTransform: 'uppercase',
         }}>
-          Real players · live form · real stakes
+          🏆 World Cup 2026 · live form · no cap
         </p>
       </div>
 

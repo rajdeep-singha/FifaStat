@@ -2,48 +2,30 @@ import { useAuth } from '../../web3/useAuth';
 
 const short = (a: string) => `${a.slice(0, 6)}…${a.slice(-4)}`;
 
-/** Top bar: who you are (on-chain username + address), W/L, and logout. */
-export const ProfileBar: React.FC<{ onEditName?: () => void }> = ({ onEditName }) => {
-  const { id, username, wins, losses, logout, onWrongNetwork, contractConfigured } = useAuth();
+/** Top bar: your wallet (your id) + logout. */
+export const ProfileBar: React.FC = () => {
+  const { id, logout, onWrongNetwork } = useAuth();
   if (!id) return null;
 
   return (
     <div style={{
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      gap: 12, padding: '8px 16px', background: 'var(--bg2)',
-      borderBottom: '1px solid var(--bg3)', fontSize: 13,
+      gap: 12, padding: '8px 16px', background: 'var(--panel)',
+      borderBottom: '1px solid var(--line)', fontSize: 13,
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <span style={{ fontSize: 18 }}>⚽</span>
-        <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2 }}>
-          {/* Default identity is just the wallet address — no name needed to play. */}
-          <strong style={{ color: 'var(--gold)' }}>{username || short(id)}</strong>
-          {username && <span style={{ color: 'var(--text2)', fontSize: 11 }} title={id}>{short(id)}</span>}
-        </div>
-        <span style={{ color: 'var(--text2)', fontSize: 12, marginLeft: 8 }}>
-          {wins}W · {losses}L
-        </span>
-        {!username && onEditName && (
-          <button
-            onClick={onEditName}
-            title={contractConfigured ? 'Claim a username on-chain (needs a little test ETH)' : 'Deploy the identity contract to enable names'}
-            style={{
-              background: 'transparent', border: '1px solid var(--bg3)', color: 'var(--text2)',
-              padding: '3px 10px', borderRadius: 8, fontSize: 11,
-            }}
-          >
-            🏷️ Set name
-          </button>
-        )}
+        <strong style={{ color: 'var(--live)', fontFamily: "'Oswald', sans-serif", letterSpacing: 0.5 }} title={id}>
+          {short(id)}
+        </strong>
+        <span style={{ color: 'var(--text2)', fontSize: 11 }}>that's you fr</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        {onWrongNetwork && (
-          <span style={{ color: '#f59e0b', fontSize: 11 }}>⚠ Switch to Sepolia</span>
-        )}
+        {onWrongNetwork && <span style={{ color: '#f59e0b', fontSize: 11 }}>⚠ switch to Sepolia</span>}
         <button
           onClick={logout}
           style={{
-            background: 'var(--bg3)', color: 'white', padding: '6px 14px',
+            background: 'var(--panel2)', color: 'white', padding: '6px 14px',
             borderRadius: 8, fontSize: 12, fontWeight: 600,
           }}
         >

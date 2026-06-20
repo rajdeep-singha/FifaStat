@@ -68,10 +68,10 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
           <div className="pack-box pack-float" onClick={open}>
             <div className="pack-crest">⚽</div>
             <div className="pack-word">CARDCLASH</div>
-            <div className="pack-tier">FORM XI · GAMEWEEK PACK</div>
+            <div className="pack-tier">🏆 WORLD CUP 2026 · FORM XI</div>
           </div>
           <button className="pack-open-btn" onClick={open}>OPEN PACK</button>
-          <p style={{ color: 'var(--text2)', fontSize: 13 }}>5 living cards · scraped fresh</p>
+          <p style={{ color: 'var(--text2)', fontSize: 13 }}>5 living cards · scraped fresh · lowkey heat</p>
         </div>
       )}
 
@@ -91,8 +91,8 @@ export const PackOpening: React.FC<{ cards: Card[]; onClose: () => void }> = ({ 
       {phase === 'revealing' && (
         <>
           <div className="pack-head fade-in">
-            <h2>{done ? 'YOUR PACK' : 'OPENING…'}</h2>
-            <p>{done ? 'Tap ↻ on any card to see its last 5 games + memes' : 'best card last'}</p>
+            <h2>{done ? 'YOUR PACK' : 'COOKING…'}</h2>
+            <p>{done ? 'tap ↻ on any card for its last 5 games + memes' : 'goat lands last'}</p>
           </div>
           <div className="pack-stage">
             {pack.map((card, i) => {

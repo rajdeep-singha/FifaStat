@@ -7,7 +7,6 @@ import { Arena } from './components/game/Arena';
 import { PackOpening } from './components/pack/PackOpening';
 import { useAuth } from './web3/useAuth';
 import { LoginScreen } from './components/auth/LoginScreen';
-import { UsernamePrompt } from './components/auth/UsernamePrompt';
 import { ProfileBar } from './components/auth/ProfileBar';
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
   const { isLoggedIn } = useAuth();
   // ?pack deep-links straight into the pack opening (handy for demos/sharing).
   const [showcase, setShowcase] = useState(() => new URLSearchParams(location.search).has('pack'));
-  const [editingName, setEditingName] = useState(false);
 
   useEffect(() => { fetchDemoCards(); }, []);
 
@@ -32,11 +30,10 @@ function App() {
   const isInGame = ['dealing', 'choosing', 'waiting_choice', 'resolving', 'finished'].includes(game.status);
 
   if (isInGame) return <Arena />;
-  if (editingName) return <UsernamePrompt onClose={() => setEditingName(false)} />;
 
   return (
     <div style={{ minHeight: '100vh' }}>
-      <ProfileBar onEditName={() => setEditingName(true)} />
+      <ProfileBar />
       <LobbyScreen onOpenPack={() => setShowcase(true)} />
     </div>
   );

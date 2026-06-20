@@ -126,7 +126,7 @@ export const CardFace: React.FC<CardFaceProps> = ({
             </div>
           </div>
 
-          <div className="back-title">Last 5 · live form</div>
+          <div className="back-title">World Cup · last 5</div>
 
           <div className="back-games">
             {recent.map((g, i) => (
@@ -134,7 +134,7 @@ export const CardFace: React.FC<CardFaceProps> = ({
                 <div className={`game-rating ${ratingClass(g.rating)}`}>{g.rating.toFixed(1)}</div>
                 <div className="game-opp">
                   <span>vs {g.opponent}</span>
-                  <span className="date">{g.match_date.slice(5)}</span>
+                  <span className="date">{(g as { stage?: string }).stage ?? g.match_date.slice(5)}</span>
                 </div>
                 <div className="game-meme">“{g.meme || card.meme_tagline}”</div>
               </div>

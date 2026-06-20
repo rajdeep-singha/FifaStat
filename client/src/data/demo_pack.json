@@ -608,55 +608,55 @@
       "def": 70,
       "phy": 65
     },
-    "overall": 87,
+    "overall": 91,
     "form": [
       {
         "match_date": "2026-06-15",
         "opponent": "Uruguay",
-        "rating": 5.5,
-        "meme": "",
+        "rating": 7.5,
+        "meme": "the metronome never stops ticking 🎯",
         "stage": "Group A"
       },
       {
-        "match_date": "2026-06-08",
-        "opponent": "Brazil",
-        "rating": 6,
-        "meme": "",
-        "stage": "Group B"
-      },
-      {
-        "match_date": "2026-06-01",
-        "opponent": "England",
-        "rating": 5.8,
-        "meme": "",
-        "stage": "Group C"
-      },
-      {
-        "match_date": "2026-05-25",
-        "opponent": "Portugal",
-        "rating": 7.5,
-        "meme": "",
-        "stage": "R16"
-      },
-      {
-        "match_date": "2026-05-18",
+        "match_date": "2026-06-10",
         "opponent": "Morocco",
-        "rating": 6.5,
-        "meme": "",
-        "stage": "Quarter-Final"
+        "rating": 7.2,
+        "meme": "Pedri with the vision only he can see 👁️",
+        "stage": "Group A"
+      },
+      {
+        "match_date": "2026-06-05",
+        "opponent": "Japan",
+        "rating": 7.8,
+        "meme": "man is built different in midfield fr 🕹️",
+        "stage": "Group A"
+      },
+      {
+        "match_date": "2026-05-30",
+        "opponent": "Portugal",
+        "rating": 7.0,
+        "meme": "quietly ran the whole midfield for 90 mins",
+        "stage": "Friendly"
+      },
+      {
+        "match_date": "2026-05-24",
+        "opponent": "England",
+        "rating": 6.8,
+        "meme": "Pedri warming up is already more technical than most",
+        "stage": "Friendly"
       }
     ],
-    "form_delta": -2,
+    "form_delta": 4,
     "eff_stats": {
-      "pac": 78,
-      "sho": 73,
-      "pas": 88,
-      "dri": 89,
-      "def": 68,
-      "phy": 64
+      "pac": 83,
+      "sho": 78,
+      "pas": 94,
+      "dri": 95,
+      "def": 73,
+      "phy": 68
     },
-    "meme_tagline": "",
-    "rarity": "silver",
+    "meme_tagline": "the metronome never stops ticking 🎯",
+    "rarity": "gold",
     "created_at": "2026-06-20T00:00:00Z"
   },
   {

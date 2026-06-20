@@ -20,7 +20,7 @@ const TICKER_DATA: TickerEntry[] = [
   { name: "Mbappe", club: "Real Madrid", rating: 9.2, delta: +3 },
   { name: "Bellingham", club: "Real Madrid", rating: 9.1, delta: +3 },
   { name: "Lamine Yamal", club: "Barcelona", rating: 9.3, delta: +3 },
-  { name: "Pedri", club: "Barcelona", rating: 5.5, delta: -2 },
+  { name: "Pedri", club: "Barcelona", rating: 7.5, delta: +4 },
   { name: "De Bruyne", club: "Man City", rating: 6.8, delta: 0 },
   { name: "Vinicius Jr", club: "Real Madrid", rating: 8.8, delta: +2 },
   { name: "Rodri", club: "Man City", rating: 8.5, delta: +3 },

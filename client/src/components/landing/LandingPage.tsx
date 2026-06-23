@@ -220,7 +220,7 @@ export const LandingPage: React.FC<Props> = ({
             <span className="hero-anakin-dot" />
             Live data powered by{" "}
             <a
-              href="https://anakin.ai"
+              href="https://anakin.io"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-anakin-link"
